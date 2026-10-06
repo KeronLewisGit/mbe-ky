@@ -1,0 +1,85 @@
+{
+  "_bricolage-grotesque-500-normal-CV-uA8Lw.woff": {
+    "file": "assets/bricolage-grotesque-500-normal-CV-uA8Lw.woff",
+    "src": "_bricolage-grotesque-500-normal-CV-uA8Lw.woff"
+  },
+  "_bricolage-grotesque-500-normal-DEDBoLFO.woff2": {
+    "file": "assets/bricolage-grotesque-500-normal-DEDBoLFO.woff2",
+    "src": "_bricolage-grotesque-500-normal-DEDBoLFO.woff2"
+  },
+  "_bricolage-grotesque-600-normal-Bw0J83-2.woff": {
+    "file": "assets/bricolage-grotesque-600-normal-Bw0J83-2.woff",
+    "src": "_bricolage-grotesque-600-normal-Bw0J83-2.woff"
+  },
+  "_bricolage-grotesque-600-normal-nxTgbNFE.woff2": {
+    "file": "assets/bricolage-grotesque-600-normal-nxTgbNFE.woff2",
+    "src": "_bricolage-grotesque-600-normal-nxTgbNFE.woff2"
+  },
+  "_bricolage-grotesque-700-normal-DvJDmrLu.woff": {
+    "file": "assets/bricolage-grotesque-700-normal-DvJDmrLu.woff",
+    "src": "_bricolage-grotesque-700-normal-DvJDmrLu.woff"
+  },
+  "_bricolage-grotesque-700-normal-gtcctNPv.woff2": {
+    "file": "assets/bricolage-grotesque-700-normal-gtcctNPv.woff2",
+    "src": "_bricolage-grotesque-700-normal-gtcctNPv.woff2"
+  },
+  "_bricolage-grotesque-800-normal-Br4b-5gk.woff": {
+    "file": "assets/bricolage-grotesque-800-normal-Br4b-5gk.woff",
+    "src": "_bricolage-grotesque-800-normal-Br4b-5gk.woff"
+  },
+  "_bricolage-grotesque-800-normal-J50vIsBe.woff2": {
+    "file": "assets/bricolage-grotesque-800-normal-J50vIsBe.woff2",
+    "src": "_bricolage-grotesque-800-normal-J50vIsBe.woff2"
+  },
+  "_fonts-Ca6QyyDH.css": {
+    "file": "assets/fonts-Ca6QyyDH.css",
+    "src": "_fonts-Ca6QyyDH.css"
+  },
+  "_inter-400-normal-C38fXH4l.woff2": {
+    "file": "assets/inter-400-normal-C38fXH4l.woff2",
+    "src": "_inter-400-normal-C38fXH4l.woff2"
+  },
+  "_inter-400-normal-CyCys3Eg.woff": {
+    "file": "assets/inter-400-normal-CyCys3Eg.woff",
+    "src": "_inter-400-normal-CyCys3Eg.woff"
+  },
+  "_inter-500-normal-BL9OpVg8.woff": {
+    "file": "assets/inter-500-normal-BL9OpVg8.woff",
+    "src": "_inter-500-normal-BL9OpVg8.woff"
+  },
+  "_inter-500-normal-Cerq10X2.woff2": {
+    "file": "assets/inter-500-normal-Cerq10X2.woff2",
+    "src": "_inter-500-normal-Cerq10X2.woff2"
+  },
+  "_inter-600-normal-CiBQ2DWP.woff": {
+    "file": "assets/inter-600-normal-CiBQ2DWP.woff",
+    "src": "_inter-600-normal-CiBQ2DWP.woff"
+  },
+  "_inter-600-normal-LgqL8muc.woff2": {
+    "file": "assets/inter-600-normal-LgqL8muc.woff2",
+    "src": "_inter-600-normal-LgqL8muc.woff2"
+  },
+  "_inter-700-normal-BLAVimhd.woff": {
+    "file": "assets/inter-700-normal-BLAVimhd.woff",
+    "src": "_inter-700-normal-BLAVimhd.woff"
+  },
+  "_inter-700-normal-Yt3aPRUw.woff2": {
+    "file": "assets/inter-700-normal-Yt3aPRUw.woff2",
+    "src": "_inter-700-normal-Yt3aPRUw.woff2"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-CecrjL1X.css",
+    "name": "app",
+    "names": [
+      "app.css"
+    ],
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BCy7p5uR.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}

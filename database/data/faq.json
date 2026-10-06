@@ -1,0 +1,105 @@
+[
+ {
+  "category": "Tracking & timelines",
+  "items": [
+   {
+    "q": "How long does it take to get my orders?",
+    "a": "<p>The short answer is typically <strong>5-7 business days after the In Transit date</strong>. When your order reaches our Miami facility it will be scanned into our system and appear on your Packages List. Once the invoice and declared value uploaded by you have been verified and approved as compliant with Customs requirements, the package status will change to In Transit. You can expect your order 5-7 business days later. However, there are many factors affecting cargo flight schedules and customs clearance timelines such as volumes, weather, holidays, prioritization of perishable cargo to name a few. Our team works closely with transportation and customs officials to clear your goods as quickly as possible. Following the instructions in our user guide and FAQ’s is something you can do to avoid unnecessary delays.</p>"
+   },
+   {
+    "q": "How can I track the status of my package?",
+    "a": "<p>Once your package has arrived at our Miami facility, it will appear in your Packages list on e-box web or app. We will also send you an email notification when your order is received at the address in Miami and again when your package is ready for collection from our store.</p>"
+   },
+   {
+    "q": "Where is my package? What do the status codes in e-Box web mean?",
+    "a": "<p>Understanding and interpreting the status codes on e-Box is an integral part of understanding your packages’ journey. Below is a summary of the package movement and the associated status codes, along with any subsequent actions required.</p>\n<p><strong>Missing Value:</strong> Missing Commercial Invoice. Please upload your invoice and declared value in USD including shipping fees but excluding tax.<br> <strong>Processing in Miami:</strong> Your package is being prepared for shipment.<br> <strong>In Transit:</strong> Your package has departed our Miami facility. The ETA for arrival in Grand Cayman is typically within 1-4 days and depends on cargo flight schedules and the prioritization of perishable and essential goods.<br> <strong>Customs:</strong> Your order is on-island at the Customs warehouse undergoing clearance. No action is required unless Customs requests anything further, at which time we will contact you via email.<br> <strong>Available for Pick-Up at MBE:</strong> Your package is ready! You can pay online through your e-box account and choose Delivery or In-Store Pick-up. We invite you to use the Express Pick-Up line if you have already paid online. You may also pay in person at the MBE store.<br> <strong>Picked Up by customer:</strong> Your goods are in your hands.<br> <strong>In Revision –</strong> There may be an issue with the package, please email cby@mbe.ky for assistance.<br> <strong>Abandoned –</strong> The package exceeded the maximum storage period, or the customer requested to discard the package</p>"
+   }
+  ]
+ },
+ {
+  "category": "Shipping fees",
+  "items": [
+   {
+    "q": "How can I calculate the shipping fees of a package?",
+    "a": "<p>We recommend estimating the shipping cost before placing your order. To do this you will need the actual weight and the approximate dimensions of the box. If this is not available from the vendor’s website, you can use your best guess.</p>\n<p>1. Take the length, width and height in inches and apply the following formula: LxWxH ÷ 166. The result is the dimensional (or volumetrics) weight in pounds (lbs). E.g. a box measuring 10”x10”x10” has a volumetric weight of 6.02 lbs.<br> 2. Take the approximate actual weight in pounds (lbs), which is the weight when the item is placed on a scale. This is the actual weight in pounds (lbs).<br> 3. Compare the results of steps 1 and 2. Select the greater of the actual and dimensional weights then apply the shipping rate for your e-Box Plan. You can find these on our website www.mbe.ky/e-box.</p>"
+   },
+   {
+    "q": "What if the vendor ships my order in a large box?",
+    "a": "<p>We have you covered! If the vendor ships a small item in a large box, the package may qualify for a volume discount provided the weight to volume ratio meets the necessary criteria. We will apply the discount automatically and it will appear in the breakdown of your shipping charges.</p>\n<p>While it is not possible to control the size box your shipper will use, there are some things you can do. If the item you wish to order is bulky, you may opt to ship it using our ocean cargo service. Please visit the Ocean Shipping section of our website for more information.</p>"
+   }
+  ]
+ },
+ {
+  "category": "Estimating duty charges",
+  "items": [
+   {
+    "q": "How is duty calculated?",
+    "a": "<p>All goods, even those that are duty-free, must clear Cayman Islands Customs. Most imported goods are subject to import duty and the most common duty rate is 22% of the CIF value (cost, insurance, freight). This essentially means that duty is assessed on the value of the goods and the shipping cost.</p>\n<p>Below are some of the most common exceptions to the standard 22% duty rate.</p>\n<p>• Books, coffee, tea, all-leather handbags, bicycles, glasses/sunglasses/lenses, cameras, protective masks, school supplies, musical instruments, knives and stainless-steel kitchen articles are Duty Free<br> • Watches, watch straps are 7%<br> • Gold, silver and platinum jewelry are 12%<br> • Soaps and shampoos are 17%<br> • Car parts are 27%</p>\n<p>**Duty rates are subject to change. The final assessment of duty is at the discretion of Customs officials. A complete list of tariffs can be found via the Customs &amp; Border Control website.</p>\n<p><strong>A note about goods purchased at a Discount</strong></p>\n<p>It is important to note that duties apply on the value of the item to a maximum of a 20% discount. For example, the original price of an article is 100$ but was purchased on sale for $50 (50% off). The dutiable value will be to a maximum of 20% off such that duties are levied at an 80$ value.</p>"
+   },
+   {
+    "q": "Why was my invoice rejected and how do I fix it?",
+    "a": "<p>The number one thing you can do to ensure a seamless package journey is upload the correct invoice format. An acceptable invoice is the official receipt from your vendor that you can upload as a PDF, JPG or PNG file.</p>\n<p>Acceptable Commercial Invoices for Customs Clearance must be legible (screen shots, pictures and low-resolution files are not accepted) and must include the following information:</p>\n<p>• the vendor’s name<br> • the purchaser/customer name (cash register receipts excepted)<br> • the order date<br> • the order number<br> • itemized descriptions and purchase prices<br> • shipping fees and total</p>\n<p>Please note: While sometimes invoices are accepted initially, they may be deemed incomplete or unacceptable by Customs officials upon further review. We endeavour to notify you as quickly as possible via email and ask that you follow the instructions to provide a compliant invoice as soon as possible to avoid clearance delays.</p>"
+   },
+   {
+    "q": "Which invoice and value should I use when my vendor splits my order in multiple shipments?",
+    "a": "<p>The best way to handle split orders is to upload your invoice and declared value based on the delivery information from your vendor. After placing your order, most vendors will send a shipping confirmation stating what has shipped and the tracking number. In e-box menu My Packages, look for the matching tracking number, upload the complete invoice but declare the value only for the items contained in that particular package. While it is not required, it is strongly urged to indicate the declared items directly on the invoice by marking them with an X, circling or highlighting. This ensures that the Customs official is aware of the split order when reviewing your import documents. You can use Adobe Acrobat or similar product. Do not cross of any items from the invoice and do not crop parts of your invoice as they will be rejected by Customs.</p>\n<p><strong>Uploading invoices for Amazon and other orders:</strong> After placing your order, Amazon will send you a shipping confirmation as each package ships from their distribution center. Most other vendors will also do this. Go to your Order History to obtain the complete invoice broken down by package. Save and upload the entire invoice to e-box and declare the value of that particular package as shown on the invoice breakdown. In the example below you would upload the complete invoice as shown and declare a value of $15.</p>"
+   },
+   {
+    "q": "I already paid duty on an order, but the vendor shipped an item separately. What should I do?",
+    "a": "<p>We understand that occasionally it may be unclear that the vendor has shipped part of your order (e.g. a short shipment) and you may have already declared and paid duty on the full value of the order. In this instance, when the next package(s) arrives, indicate the item(s) on the invoice and upload it but declare a nominal $0.01 value. This will alert our team to investigate the initial declaration and provide the appropriate paperwork to Customs to ensure the transparency of this order and that you are not charged again for duties already paid.</p>"
+   }
+  ]
+ },
+ {
+  "category": "Locating missing packages",
+  "items": [
+   {
+    "q": "I don’t see an order on My Packages list. How can I locate it?",
+    "a": "<p>There are several reasons a package may not show up on your list.</p>\n<p><strong>CBY# Missing:</strong> The most common reason that a package does not appear in your list is that it arrived without a CBY# on the shipping label. You can search for the missing package on e-box and associate it to your account. To do this, click on “Search for Package not Received” and copy/paste the tracking number from the vendor in the field, click Search and follow the prompts. Please allow 1-2 business days for the package status to show in your packages list. If the package does not appear in your account after two days, please email our service team at cby@mbe.ky.</p>\n<p><strong>Packages delivered with USPS.</strong> When you receive a status notification from USPS that a package has been Delivered, this indicates that it was delivered to the U.S. Post Office nearest your e-box address. It may take a further 1-5 business days for the package to be delivered to our warehouse by post office personnel. Please re-check your e-box account and if the package does not appear after 5 business days contact us at cby@mbe.ky for assistance.</p>\n<p><strong>Package Undeliverable / Business Closed:</strong> This is likely due to a delivery attempt outside of regular business hours. The courier will attempt to re-deliver the package during business hours within 1-3 days. Please monitor your e-box account for updates. Once received at our warehouse your packages will be scanned into our e-box system in the usual way and you can monitor it through the e-box website or app.</p>\n<p>If the package does not appear on your account after the expected timeframe, please contact our customer service team for assistance at cby@mbe.ky.</p>"
+   },
+   {
+    "q": "What if I did not include my CBY number when placing the order?",
+    "a": "<p>If the package has already arrived in Miami, you can log in to your account and click on “Search for Unidentified package”. You can then upload the invoice and tracking number. Allow 1 to 2 business days for the status of the package to be updated. If the package still does not appear in your account, please email our service team at cby@mbe.ky.</p>"
+   }
+  ]
+ },
+ {
+  "category": "How pre-alerts work (and don’t work)",
+  "items": [
+   {
+    "q": "How do I pre-alert a package for expedited processing?",
+    "a": "<p>To get the most out of your e-box service, you can pre-alert us of your expected orders. This means that you will enter the information of a package that you are expecting which enables the package to be validated automatically once it arrives at the Miami facility, making the processing quicker.</p>\n<p>To pre-alert a package, click on Pre-alert a New Package in your e-box account. Enter the requested information, upload the invoice and then click Submit. As soon as the package arrives at our facility in Miami and the information matches, the package will be processed, and it will be included on the next shipment.</p>\n<p><strong>Important! Read before creating a Pre-alert</strong></p>\n<p>• If the vendor shipped your order using FedEx or USPS, you can skip the Pre-alert because their tracking numbers are not currently compatible with our Pre-alert system.<br> • You must submit the pre-alert at least 1 business day before your package is scheduled for delivery so create it as soon as you receive the shipping notification from the vendor.<br> • You can only create a Pre-alert once you have received a shipping confirmation with the tracking number from your vendor. If you do not have a tracking number, you cannot Pre-Alert your order.<br> • If your Pre-alert did not work for whatever reason or you did not create one, do not worry, your package will still be handled through our regular process.</p>"
+   },
+   {
+    "q": "I pre-alerted my package’s arrival. Why am I asked to provide my invoice again?",
+    "a": "<p>The Pre-alert is an excellent way to ensure your package moves quickly through the package journey. There are however exceptions when the Pre-alert will not work as intended. If that happens, you will be required to upload the invoice again, even if you already uploaded it.</p>\n<p>There are two main reasons a Pre-Alert will not work:</p>\n<p>1. FedEx tracking numbers and some USPS tracking numbers are not compatible with the Pre-alert feature. If you proceed with the Pre-alert you may receive an email instructing you to upload the invoice again. If you know that the vendor has shipped your order using FedEx or USPS, you may opt to skip the Pre-alert. Once your order arrives in Miami, you will be notified to upload the invoice at that time.</p>\n<p>2. The Pre-alert was received in our system after your order was delivered to our Miami facility, or too close to the delivery time. To avoid this, ensure that you Pre-alert an order at least one business day before the scheduled delivery day. A good rule to follow is to create the Pre-alert as soon as the vendor has sent you the shipping confirmation email containing the tracking number.</p>"
+   }
+  ]
+ },
+ {
+  "category": "Payment, pick-up and delivery",
+  "items": [
+   {
+    "q": "How do I pay for my package?",
+    "a": "<p>Once the package status is Available for Pick Up, you can pay online through your e-box account and choose Delivery or In-Store Pick-up. We invite you to use the Express Pick-Up line if you have already paid online. You may also pay at the MBE store when you collect your package.</p>"
+   }
+  ]
+ },
+ {
+  "category": "Prohibited & hazardous goods",
+  "items": [
+   {
+    "q": "Prohibited Goods: Can I ship any type of product?",
+    "a": "<p>Some items are prohibited and others are handled as hazardous goods (fees apply). Below is a simple list however this list is not exhaustive and subject to change. If you have questions about whether you can import a specific item, please contact us. If we receive prohibited or hazardous items, they will be retained in Miami and you will be notified. We can coordinate a return or warehouse pickup in the event of prohibited goods. In the case of hazardous goods, you will have the option to pay the additional fees if you wish to ship the goods. The use of the service to receive and send cash, bearer checks, jewelry, securities, currency, money orders and any other financial instrument in general, is not permitted.</p>\n<p>Hazardous Goods</p>\n<p>• Corrosive liquids (flammable liquids, chemicals, toxic liquids)<br> • Perfumes (only allowed to ship 2 units per box)<br> • Lighters (with gas)<br> • Oil based paint<br> • Batteries</p>\n<p>• Insecticides<br> • Aerosols</p>\n<p>Prohibited Goods</p>\n<p>• Guns, Gun parts or accessories (scopes, magazines, ammunition, etc.)<br> • Living plants or animals<br> • Perishables (Food)<br> • Cash or cash equivalents (money orders)<br> • Gambling Instruments<br> • Recreational Drugs<br> • Bow and/or arrows<br> • Paintball guns and accessories</p>"
+   },
+   {
+    "q": "What happens if I ordered a prohibited item by mistake?",
+    "a": "<p>If the item you bought is prohibited, it will be received in Miami but may not be shipped to the Cayman Islands. MBE offers several options:</p>\n<p>• You can contact your supplier and notify them that the item cannot be received. The supplier can collect the package from our facility and give you a refund.<br> • The supplier can also tell you to return the package. In this case you will have to cover the shipping cost from Miami to the supplier. After the supplier receives the returned package, you will be reimbursed the value of the article in accordance with the seller’s return policy.<br> • You can ask a family member or friend to collect the package directly from our facility.<br> • You can request to send the package to another address. In this case you will have to cover the cost of shipping the package from Miami to the destination address.<br> Please note that handling fees will apply for any of the above-mentioned options.</p>"
+   },
+   {
+    "q": "Do you have another question?",
+    "a": "<p>You can email us at <a href=\"mailto:cby@mbe.ky\">cby@mbe.ky</a>, call us on 745-1400 or visit our store and we will be happy to assist you.</p>"
+   }
+  ]
+ }
+]

@@ -1,0 +1,273 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../../config/mbe.php';
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+    --font-display: 'Bricolage Grotesque', 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+    /* MBE red, taken from the brand's in-store and social artwork */
+    --color-brand-50: #fef3f2;
+    --color-brand-100: #fde4e3;
+    --color-brand-200: #fbcdcb;
+    --color-brand-300: #f6a6a3;
+    --color-brand-400: #ee6f6b;
+    --color-brand-500: #e2413f;
+    --color-brand-600: #d21f24;
+    --color-brand-700: #b0151c;
+    --color-brand-800: #92151b;
+    --color-brand-900: #79181d;
+
+    /* Ink (logo black) and warm paper neutrals */
+    --color-ink: #141517;
+    --color-ink-soft: #24262a;
+    --color-paper: #f7f5f1;
+    --color-paper-deep: #efebe4;
+    --color-line: #e4dfd6;
+    --color-muted: #5d6470;
+
+    --shadow-card: 0 1px 2px rgb(20 21 23 / 0.04), 0 8px 24px -12px rgb(20 21 23 / 0.12);
+    --shadow-lift: 0 2px 4px rgb(20 21 23 / 0.04), 0 24px 48px -20px rgb(20 21 23 / 0.28);
+
+    --animate-marquee: marquee 38s linear infinite;
+    --animate-float: float 7s ease-in-out infinite;
+
+    @keyframes marquee {
+        to {
+            transform: translateX(-50%);
+        }
+    }
+    @keyframes float {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-8px);
+        }
+    }
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 6.5rem;
+        -webkit-text-size-adjust: 100%;
+    }
+    body {
+        @apply bg-paper font-sans text-ink antialiased;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+        @apply font-display tracking-tight text-balance;
+    }
+    p {
+        text-wrap: pretty;
+    }
+    ::selection {
+        @apply bg-brand-600 text-white;
+    }
+    :focus-visible {
+        @apply outline-2 outline-offset-2 outline-brand-600;
+    }
+    [x-cloak] {
+        display: none !important;
+    }
+    button,
+    [role='button'],
+    summary {
+        cursor: pointer;
+    }
+}
+
+@layer components {
+    .wrap {
+        @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+    }
+    .section {
+        @apply py-16 sm:py-24;
+    }
+    .eyebrow {
+        @apply inline-flex items-center gap-2 text-xs font-semibold tracking-[0.16em] text-brand-700 uppercase;
+    }
+    .eyebrow::before {
+        content: '';
+        @apply h-px w-6 bg-brand-600;
+    }
+    .h-display {
+        @apply font-display text-4xl leading-[1.05] font-bold tracking-tight sm:text-5xl lg:text-6xl;
+    }
+    .h-section {
+        @apply font-display text-3xl leading-tight font-bold tracking-tight sm:text-4xl;
+    }
+    .lead {
+        @apply text-lg leading-relaxed text-muted;
+    }
+
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold whitespace-nowrap transition duration-200;
+    }
+    .btn-primary {
+        @apply bg-brand-600 text-white shadow-sm hover:bg-brand-700 active:scale-[0.98];
+    }
+    .btn-dark {
+        @apply bg-ink text-white hover:bg-ink-soft active:scale-[0.98];
+    }
+    .btn-light {
+        @apply bg-white text-ink ring-1 ring-line hover:ring-ink/40 active:scale-[0.98];
+    }
+    .btn-ghost {
+        @apply text-ink hover:bg-ink/5;
+    }
+    .btn-onDark {
+        @apply bg-white/10 text-white ring-1 ring-white/20 hover:bg-white/20;
+    }
+    .link {
+        @apply font-semibold text-brand-700 underline decoration-brand-300 underline-offset-4 transition hover:decoration-brand-700;
+    }
+    .link-arrow {
+        @apply inline-flex items-center gap-1.5 text-sm font-semibold text-ink transition hover:gap-2.5 hover:text-brand-700;
+    }
+
+    .card {
+        @apply rounded-3xl bg-white p-6 shadow-card ring-1 ring-line/70 sm:p-8;
+    }
+    .chip {
+        @apply inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink ring-1 ring-line;
+    }
+    .icon-tile {
+        @apply grid size-12 shrink-0 place-items-center rounded-2xl bg-brand-50 text-brand-700;
+    }
+
+    .label {
+        @apply mb-1.5 block text-sm font-medium text-ink;
+    }
+    .input {
+        @apply block w-full rounded-xl border-0 bg-white px-3.5 py-2.5 text-[15px] text-ink shadow-sm ring-1 ring-line transition placeholder:text-muted/60 focus:ring-2 focus:ring-brand-600 focus:outline-none;
+    }
+    select.input {
+        @apply pr-9;
+    }
+    .input-error {
+        @apply ring-brand-500;
+    }
+    .field-error {
+        @apply mt-1.5 text-sm font-medium text-brand-700;
+    }
+    .hint {
+        @apply mt-1.5 text-xs text-muted;
+    }
+    /* Selectable option cards: <label class="option"><input type="radio" class="peer sr-only"><span>…</span></label> */
+    .option > span {
+        @apply flex h-full cursor-pointer flex-col rounded-2xl bg-white p-4 text-sm ring-1 ring-line transition hover:ring-ink/40;
+    }
+    .option > input:checked + span {
+        @apply bg-brand-50 ring-2 ring-brand-600;
+    }
+    .option > input:focus-visible + span {
+        @apply outline-2 outline-offset-2 outline-brand-600;
+    }
+
+    .table-clean {
+        @apply w-full text-left text-sm;
+    }
+    .table-clean th {
+        @apply border-b border-line px-4 py-3 text-xs font-semibold tracking-wider text-muted uppercase;
+    }
+    .table-clean td {
+        @apply border-b border-line/70 px-4 py-3.5 align-top;
+    }
+    .table-clean tr:last-child td {
+        @apply border-b-0;
+    }
+
+    /* Long-form content converted from the existing site (legal pages, posts, FAQ answers) */
+    .prose-mbe {
+        @apply text-[15.5px] leading-relaxed text-ink/80;
+    }
+    .prose-mbe > * + * {
+        @apply mt-4;
+    }
+    .prose-mbe h2,
+    .prose-mbe h3,
+    .prose-mbe h4,
+    .prose-mbe h5 {
+        @apply mt-8 font-display text-xl font-bold text-ink;
+    }
+    .prose-mbe a {
+        @apply font-medium text-brand-700 underline decoration-brand-300 underline-offset-4 hover:decoration-brand-700;
+    }
+    .prose-mbe strong {
+        @apply font-semibold text-ink;
+    }
+    .prose-mbe ul {
+        @apply list-disc space-y-1.5 pl-5 marker:text-brand-600;
+    }
+    .prose-mbe ol {
+        @apply list-decimal space-y-1.5 pl-5 marker:font-semibold marker:text-brand-700;
+    }
+    .prose-mbe li > ul,
+    .prose-mbe li > ol {
+        @apply mt-1.5;
+    }
+    .prose-mbe table {
+        @apply my-6 w-full overflow-hidden rounded-xl text-sm ring-1 ring-line;
+    }
+    .prose-mbe td,
+    .prose-mbe th {
+        @apply border-b border-line px-3 py-2 text-left align-top;
+    }
+
+    /* Decorative "airmail" edge used on dark bands */
+    .airmail {
+        background-image: repeating-linear-gradient(
+            -45deg,
+            var(--color-brand-600) 0 14px,
+            transparent 14px 28px,
+            var(--color-ink) 28px 42px,
+            transparent 42px 56px
+        );
+    }
+    .grid-paper {
+        background-image: radial-gradient(rgb(20 21 23 / 0.08) 1px, transparent 1px);
+        background-size: 22px 22px;
+    }
+    .grid-ink {
+        background-image: radial-gradient(rgb(255 255 255 / 0.09) 1px, transparent 1px);
+        background-size: 22px 22px;
+    }
+}
+
+/* Scroll reveal (progressive enhancement: only hides when JS has tagged <html>) */
+.js [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+        opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+        transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+}
+.js [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    .js [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    .animate-marquee,
+    .animate-float {
+        animation: none;
+    }
+}
