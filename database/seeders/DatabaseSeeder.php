@@ -13,9 +13,10 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        User::updateOrCreate(
+        // firstOrCreate: re-seeding must never reset a password staff have already changed.
+        User::firstOrCreate(
             ['email' => 'admin@mbe.ky'],
-            ['name' => 'MBE Store Admin', 'password' => 'mbe-demo-2026'],
+            ['name' => 'MBE Store Admin', 'password' => config('mbe.admin_password')],
         );
 
         $this->posts();

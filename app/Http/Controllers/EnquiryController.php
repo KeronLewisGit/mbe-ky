@@ -21,7 +21,7 @@ class EnquiryController extends Controller
     {
         abort_unless(isset(Enquiry::TYPES[$type]), 404);
 
-        $back = url()->previous(route('contact')).'#form-'.$type;
+        $back = $this->returnUrl($request).'#form-'.$type;
 
         // Honeypot: bots fill the hidden "website" field. Pretend it worked.
         if ($request->filled('website')) {
@@ -55,7 +55,15 @@ class EnquiryController extends Controller
         ];
 
         if ($file = $request->file('attachment')) {
-            $attributes['attachment_path'] = $file->store('enquiries');
+            $path = $file->store('enquiries');
+
+            if ($path === false) {
+                return redirect()->to($back)
+                    ->withErrors(['attachment' => 'We could not save your file. Please try again.'], $type)
+                    ->withInput($request->except('attachment'));
+            }
+
+            $attributes['attachment_path'] = $path;
             $attributes['attachment_name'] = $file->getClientOriginalName();
         }
 
@@ -66,6 +74,14 @@ class EnquiryController extends Controller
             'reference' => $enquiry->reference,
             'email' => $enquiry->email,
         ]);
+    }
+
+    /** The page the form was submitted from, but only if it is on this site. */
+    protected function returnUrl(Request $request): string
+    {
+        $previous = url()->previous(route('contact'));
+
+        return parse_url($previous, PHP_URL_HOST) === $request->getHost() ? $previous : route('contact');
     }
 
     protected function rules(string $type): array

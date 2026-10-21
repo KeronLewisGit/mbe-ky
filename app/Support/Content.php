@@ -13,7 +13,9 @@ class Content
     {
         static $faq;
 
-        return $faq ??= json_decode(file_get_contents(database_path('data/faq.json')), true);
+        $path = database_path('data/faq.json');
+
+        return $faq ??= (is_file($path) ? json_decode(file_get_contents($path), true) : null) ?? [];
     }
 
     public static function legal(string $slug): ?string

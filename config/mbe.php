@@ -53,6 +53,9 @@ return [
 
     'timezone' => 'America/Cayman',
 
+    // Password for the seeded staff login. Set MBE_ADMIN_PASSWORD before seeding anything public-facing.
+    'admin_password' => env('MBE_ADMIN_PASSWORD', 'mbe-demo-2026'),
+
     'links' => [
         'ebox_login' => 'https://mbe-latam.com/eboxweb/',
         'ebox_signup' => 'https://mbe-latam.com/registro/cby/ebox',

@@ -29,10 +29,11 @@ class PageController extends Controller
 
     public function home(): View
     {
+        $sailings = Sailing::upcoming()->get();
+
         return view('pages.home', [
             'posts' => Post::latest('published_at')->take(3)->get(),
-            'nextSailing' => Sailing::upcoming()->get()->first(fn (Sailing $s) => ! $s->cutoffPassed())
-                ?? Sailing::upcoming()->first(),
+            'nextSailing' => $sailings->first(fn (Sailing $s) => ! $s->cutoffPassed()) ?? $sailings->first(),
         ]);
     }
 
@@ -61,7 +62,7 @@ class PageController extends Controller
     public function search(Request $request): View
     {
         $query = trim((string) $request->query('q'));
-        $terms = collect(preg_split('/\s+/', Str::lower($query)))->filter(fn ($t) => strlen($t) > 1);
+        $terms = collect(preg_split('/\s+/', Str::lower($query)))->filter(fn ($t) => mb_strlen($t) > 1);
         $results = collect();
 
         if ($terms->isNotEmpty()) {

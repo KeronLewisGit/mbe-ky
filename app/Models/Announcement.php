@@ -27,11 +27,6 @@ class Announcement extends Model
             ->first();
     }
 
-    public function isLive(): bool
-    {
-        return $this->is(self::current());
-    }
-
     public function window(): string
     {
         return match (true) {
