@@ -15,7 +15,7 @@
 <x-layout title="Physical Mailbox" description="Private mailboxes at Mail Boxes Etc. Camana Bay and Harbour Walk from CI$185 a year. Apply online in minutes.">
     <x-page-hero eyebrow="Physical Mailbox" title="Simplify your life with a private mailbox."
         lead="Convenient and secure Private Mail Boxes for receiving local and international mail. With an MBE mailbox you get a street address, so courier deliveries are no problem."
-        image="physical-mailbox.jpg" image-alt="Brass MBE mailboxes, one open with mail inside" :crumb="['Mailboxes', route('mailboxes')]">
+        image="physical-mailbox.jpg" image-alt="A smiling customer collecting letters from his MBE mailbox" :crumb="['Mailboxes', route('mailboxes')]">
         <a href="#form-mailbox" class="btn btn-primary">Apply online</a>
         <a href="#pricing" class="btn btn-onDark">See prices</a>
     </x-page-hero>
@@ -73,7 +73,7 @@
 
     {{-- Application --}}
     <section class="section">
-        <div class="wrap grid gap-12 lg:grid-cols-12">
+        <div class="wrap grid grid-cols-1 gap-12 lg:grid-cols-12">
             <div class="lg:col-span-4" data-reveal>
                 <p class="eyebrow">Getting your mailbox</p>
                 <h2 class="h-section mt-4">Signing up is easy.</h2>
@@ -194,7 +194,7 @@
 
                     <div class="hidden" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 
-                    <button type="submit" class="btn btn-primary mt-6 !px-6 !py-3.5 !text-base">Submit application <x-icon name="arrow-right" class="size-4" /></button>
+                    <button type="submit" class="btn btn-lg btn-primary mt-6">Submit application <x-icon name="arrow-right" class="size-4" /></button>
                     <p class="hint">No payment is taken now. We email you a secure payment link.</p>
                 </form>
             </div>

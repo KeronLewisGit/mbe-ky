@@ -2,7 +2,7 @@
     <x-page-hero :eyebrow="$meta['group']" :title="$meta['title']" :lead="$meta['summary']" />
 
     <section class="section">
-        <div class="wrap grid gap-12 lg:grid-cols-12">
+        <div class="wrap grid grid-cols-1 gap-12 lg:grid-cols-12">
             <aside class="lg:col-span-4">
                 <nav class="top-28 space-y-6 lg:sticky" aria-label="Guides and policies">
                     @foreach (collect(config('mbe.legal'))->groupBy('group', preserveKeys: true) as $group => $docs)

@@ -4,14 +4,14 @@
 <x-layout title="Virtual Mailbox" description="View and manage your postal mail online, anytime and from anywhere, with the MBE Virtual Mailbox powered by Anytime Mailbox.">
     <x-page-hero eyebrow="Virtual Mailbox" title="Check and manage your postal mail. Anywhere, anytime."
         lead="The new way to receive and manage your postal mail from the comfort of home or office, without having to check a physical mailbox."
-        image="virtual-mailbox.jpg" image-alt="A phone showing a new mail item notification" :crumb="['Mailboxes', route('mailboxes')]">
+        image="virtual-mailbox.jpg" image-alt="A woman delighted by a new mail notification on her phone" :crumb="['Mailboxes', route('mailboxes')]">
         <a href="#get-started" class="btn btn-primary">Get started</a>
         <a href="{{ $mbe['links']['virtual_login'] }}" target="_blank" rel="noopener" class="btn btn-onDark">Already have a Virtual Mailbox? Sign in <x-icon name="arrow-up-right" class="size-4" /></a>
     </x-page-hero>
 
     {{-- Actions --}}
     <section class="section">
-        <div class="wrap grid items-center gap-12 lg:grid-cols-12">
+        <div class="wrap grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
             <div class="lg:col-span-5" data-reveal>
                 <p class="eyebrow">Manage your postal mail online</p>
                 <h2 class="h-section mt-4">Your mail arrives. You decide what happens next.</h2>

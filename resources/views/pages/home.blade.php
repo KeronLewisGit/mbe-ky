@@ -20,8 +20,8 @@
                     Proudly serving Cayman for over a decade. A U.S. address for online shopping, mailboxes with a real street address, worldwide courier and professional printing, from one friendly island team. Shop the world and we&rsquo;ll bring it home.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
-                    <a href="{{ route('ebox') }}" class="btn btn-primary !px-6 !py-3.5 !text-base">Get a U.S. address <x-icon name="arrow-right" class="size-4" /></a>
-                    <a href="{{ route('contact') }}#contact" class="btn btn-onDark !px-6 !py-3.5 !text-base">Ask for a quote</a>
+                    <a href="{{ route('ebox') }}" class="btn btn-lg btn-primary">Get a U.S. address <x-icon name="arrow-right" class="size-4" /></a>
+                    <a href="{{ route('contact') }}#contact" class="btn btn-lg btn-onDark">Ask for a quote</a>
                 </div>
                 <ul class="mt-10 grid max-w-xl gap-x-6 gap-y-3 text-sm sm:grid-cols-3">
                     @foreach ([
@@ -39,7 +39,7 @@
 
             <div class="relative lg:col-span-5 lg:mb-12" data-reveal style="--reveal-delay: 120ms">
                 <div class="relative mx-auto aspect-[4/3] max-w-md overflow-hidden rounded-sm shadow-lift lg:ml-auto lg:max-w-none">
-                    <img src="{{ asset('images/hero-family.jpg') }}" alt="A happy Cayman family at their front door with a parcel from Mail Boxes Etc." class="size-full object-cover object-[50%_35%]" fetchpriority="high">
+                    <img src="{{ asset('images/hero-family.jpg') }}" alt="A happy Caribbean family at home with a parcel from Mail Boxes Etc." class="size-full object-cover object-[50%_35%]" fetchpriority="high">
                     <div class="airmail absolute inset-x-0 bottom-0 h-1.5"></div>
                 </div>
                 <p class="mt-3 text-center text-xs text-white/60 lg:text-right">Mail Boxes Etc. Cayman &middot; {{ $mbe['tagline'] }}</p>
@@ -49,7 +49,7 @@
 
     {{-- Live estimator --}}
     <section class="relative z-10 bg-paper" aria-labelledby="estimator-heading">
-        <div class="wrap grid items-center gap-10 py-14 sm:py-16 lg:grid-cols-12">
+        <div class="wrap grid grid-cols-1 items-center gap-10 py-16 sm:py-24 lg:grid-cols-12">
             <div class="lg:col-span-6" data-reveal>
                 <p class="eyebrow">Send a parcel today</p>
                 <h2 id="estimator-heading" class="h-section mt-4">Know the cost before you click &ldquo;buy&rdquo;.</h2>
@@ -198,7 +198,7 @@
 
                 {{-- Pack & Ship --}}
                 <a href="{{ route('pack-ship') }}" class="group relative overflow-hidden rounded-3xl md:col-span-2" data-reveal>
-                    <img src="{{ asset('images/pack-ship.jpg') }}" alt="An MBE team member taping up a parcel" class="absolute inset-0 size-full object-cover transition duration-700 group-hover:scale-105" loading="lazy">
+                    <img src="{{ asset('images/pack-ship.jpg') }}" alt="A smiling MBE courier handing a parcel to a customer" class="absolute inset-0 size-full object-cover transition duration-700 group-hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-transparent"></div>
                     <div class="relative flex h-full min-h-72 flex-col justify-end p-6 text-white">
                         <h3 class="font-display text-xl font-bold">Pack &amp; Ship</h3>
@@ -357,7 +357,7 @@
             </div>
             <div class="mt-12 grid gap-6 lg:grid-cols-2">
                 <article class="card flex flex-col gap-6 sm:flex-row" data-reveal>
-                    <img src="{{ asset('images/virtual-mailbox.jpg') }}" alt="Virtual mailbox notification on a phone" class="aspect-square w-full rounded-2xl object-cover sm:w-44" loading="lazy">
+                    <img src="{{ asset('images/virtual-mailbox.jpg') }}" alt="A woman delighted by a new mail notification on her phone" class="aspect-square w-full rounded-2xl object-cover sm:w-44" loading="lazy">
                     <div class="flex flex-col">
                         <p class="chip w-fit !bg-brand-50 !text-brand-700 !ring-brand-100">Powered by Anytime Mailbox</p>
                         <h3 class="mt-3 font-display text-2xl font-bold">Virtual Mailbox</h3>
@@ -367,7 +367,7 @@
                     </div>
                 </article>
                 <article class="card flex flex-col gap-6 sm:flex-row" data-reveal style="--reveal-delay: 100ms">
-                    <img src="{{ asset('images/physical-mailbox.jpg') }}" alt="Brass MBE mailboxes, one open with mail inside" class="aspect-square w-full rounded-2xl object-cover sm:w-44" loading="lazy">
+                    <img src="{{ asset('images/physical-mailbox.jpg') }}" alt="A smiling customer collecting letters from his MBE mailbox" class="aspect-square w-full rounded-2xl object-cover object-[75%_40%] sm:w-44" loading="lazy">
                     <div class="flex flex-col">
                         <p class="chip w-fit">24-hour access at Camana Bay</p>
                         <h3 class="mt-3 font-display text-2xl font-bold">Physical Mailbox</h3>

@@ -142,7 +142,7 @@
                 <button type="button" class="grid size-10 place-items-center rounded-sm transition hover:bg-ink/5" @click="search = true; $nextTick(() => $refs.search.focus())" aria-label="Search">
                     <x-icon name="search" class="size-[18px]" />
                 </button>
-                <a href="{{ $mbe['links']['ebox_signup'] }}" target="_blank" rel="noopener" class="btn btn-primary hidden !py-2.5 sm:inline-flex">Get a U.S. address</a>
+                <a href="{{ $mbe['links']['ebox_signup'] }}" target="_blank" rel="noopener" class="btn btn-sm btn-primary hidden sm:inline-flex">Get a U.S. address</a>
                 <button type="button" class="grid size-10 place-items-center rounded-sm bg-ink text-white lg:hidden" @click="menu = true" aria-label="Open menu">
                     <x-icon name="menu" class="size-[18px]" />
                 </button>
@@ -212,8 +212,8 @@
                     </p>
                     <p class="mt-4 font-display text-lg font-medium text-brand-400">{{ $mbe['tagline'] }}</p>
                     <div class="mt-6 flex flex-wrap gap-2">
-                        <a href="tel:{{ $mbe['phone_href'] }}" class="btn btn-onDark !py-2.5"><x-icon name="phone" class="size-4" /> {{ $mbe['phone'] }}</a>
-                        <a href="mailto:{{ $mbe['emails']['general'] }}" class="btn btn-onDark !py-2.5"><x-icon name="mail" class="size-4" /> {{ $mbe['emails']['general'] }}</a>
+                        <a href="tel:{{ $mbe['phone_href'] }}" class="btn btn-sm btn-onDark"><x-icon name="phone" class="size-4" /> {{ $mbe['phone'] }}</a>
+                        <a href="mailto:{{ $mbe['emails']['general'] }}" class="btn btn-sm btn-onDark"><x-icon name="mail" class="size-4" /> {{ $mbe['emails']['general'] }}</a>
                     </div>
                 </div>
 

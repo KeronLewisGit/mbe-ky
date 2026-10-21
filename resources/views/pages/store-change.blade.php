@@ -8,7 +8,7 @@
         :crumb="['E-box', route('ebox')]" />
 
     <section class="section">
-        <div class="wrap grid gap-12 lg:grid-cols-12">
+        <div class="wrap grid grid-cols-1 gap-12 lg:grid-cols-12">
             <div class="lg:col-span-7" data-reveal>
                 <form id="form-store-change" method="POST" action="{{ route('enquiries.store', $bag) }}" class="card scroll-mt-28">
                     @csrf
@@ -40,7 +40,7 @@
 
                     <div class="hidden" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 
-                    <button type="submit" class="btn btn-primary mt-6 !px-6 !py-3.5 !text-base">Submit request <x-icon name="arrow-right" class="size-4" /></button>
+                    <button type="submit" class="btn btn-lg btn-primary mt-6">Submit request <x-icon name="arrow-right" class="size-4" /></button>
                 </form>
             </div>
             <aside class="space-y-4 lg:col-span-5" data-reveal style="--reveal-delay: 120ms">

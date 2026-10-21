@@ -42,7 +42,7 @@
                         <form method="POST" action="{{ route('admin.announcements.toggle', $announcement) }}">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-light !px-3.5 !py-2">{{ $announcement->is_active ? 'Switch off' : 'Switch on' }}</button>
+                            <button class="btn btn-sm btn-light">{{ $announcement->is_active ? 'Switch off' : 'Switch on' }}</button>
                         </form>
                         <form method="POST" action="{{ route('admin.announcements.destroy', $announcement) }}" onsubmit="return confirm('Remove this announcement?')">
                             @csrf

@@ -38,7 +38,7 @@
 
     {{-- Print from phone --}}
     <section class="section scroll-mt-20 bg-white" id="print-from-phone">
-        <div class="wrap grid items-center gap-12 lg:grid-cols-2">
+        <div class="wrap grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div data-reveal>
                 <p class="eyebrow">Print from Phone</p>
                 <h2 class="h-section mt-4">Bring your camera roll to life.</h2>
@@ -53,7 +53,7 @@
                     ['photo-prints.jpg', 'Decorate your home with personalised photo prints'],
                     ['photo-gift.jpg', 'Create a unique gift for a loved one'],
                     ['photo-keepsake.jpg', 'Preserve your memories in a tangible form'],
-                    ['print-from-phone.jpg', null],
+                    ['print-from-phone.jpg', 'Share your favourite moments with family'],
                 ] as [$image, $caption])
                     <figure class="group relative overflow-hidden rounded-2xl {{ $loop->even ? 'translate-y-6' : '' }}">
                         <img src="{{ asset('images/'.$image) }}" alt="{{ $caption ?? 'Print and cherish precious memories' }}" class="aspect-square w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy">
@@ -98,9 +98,9 @@
 
     {{-- Photo booth --}}
     <section class="section scroll-mt-20" id="photo-booth">
-        <div class="wrap grid items-center gap-12 lg:grid-cols-2">
+        <div class="wrap grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div class="relative order-last lg:order-first" data-reveal>
-                <img src="{{ asset('images/photo-booth.jpg') }}" alt="Two friends pulling faces in a photo booth" class="aspect-square w-full rounded-3xl object-cover shadow-lift" loading="lazy">
+                <img src="{{ asset('images/photo-booth.jpg') }}" alt="Four friends laughing with photo booth props" class="aspect-[4/3] w-full rounded-3xl object-cover shadow-lift" loading="lazy">
                 <span class="absolute top-5 left-5 rounded-full bg-brand-600 px-3.5 py-1.5 text-xs font-medium tracking-wide text-white uppercase">New service</span>
             </div>
             <div data-reveal style="--reveal-delay: 120ms">

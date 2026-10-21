@@ -1,6 +1,6 @@
 <x-admin :title="$enquiry->reference">
     <x-slot:actions>
-        <a href="{{ route('admin.enquiries') }}" class="btn btn-light !py-2.5"><x-icon name="arrow-left" class="size-4" /> All enquiries</a>
+        <a href="{{ route('admin.enquiries') }}" class="btn btn-sm btn-light"><x-icon name="arrow-left" class="size-4" /> All enquiries</a>
     </x-slot:actions>
 
     <div class="grid gap-6 xl:grid-cols-3">

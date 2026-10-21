@@ -2,7 +2,7 @@
     $featured = $posts->first();
 @endphp
 <x-layout title="News & Offers" description="News, offers and tips from Mail Boxes Etc. Cayman Islands.">
-    <x-page-hero eyebrow="News &amp; offers" title="The latest from MBE Cayman."
+    <x-page-hero eyebrow="News & offers" title="The latest from MBE Cayman."
         lead="New services, seasonal offers and tips for getting the most from E-box and your mailbox." />
 
     <section class="section">

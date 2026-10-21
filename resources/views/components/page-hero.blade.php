@@ -24,7 +24,7 @@
                 <p class="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">{{ $lead }}</p>
             @endif
             @if ($slot->isNotEmpty())
-                <div class="mt-8 flex flex-wrap items-center gap-3">{{ $slot }}</div>
+                <div class="hero-actions mt-8 flex flex-wrap items-center gap-3">{{ $slot }}</div>
             @endif
         </div>
         @if ($image)

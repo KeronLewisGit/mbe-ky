@@ -25,7 +25,7 @@
                                     <span class="rounded-full px-2.5 py-1 text-xs font-medium {{ $past ? 'bg-paper text-muted ring-1 ring-line' : 'bg-emerald-50 text-emerald-800' }}">{{ $past ? 'Archived' : 'Live' }}</span>
                                 </td>
                                 <td class="text-right whitespace-nowrap">
-                                    <button form="sailing-{{ $sailing->id }}" class="btn btn-light !px-3.5 !py-2">Save</button>
+                                    <button form="sailing-{{ $sailing->id }}" class="btn btn-sm btn-light">Save</button>
                                     <form method="POST" action="{{ route('admin.sailings.destroy', $sailing) }}" class="inline" onsubmit="return confirm('Remove this sailing?')">
                                         @csrf
                                         @method('DELETE')

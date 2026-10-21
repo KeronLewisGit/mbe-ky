@@ -7,7 +7,7 @@
     </x-page-hero>
 
     <section class="section">
-        <div class="wrap grid items-center gap-12 lg:grid-cols-2">
+        <div class="wrap grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div data-reveal>
                 <p class="eyebrow">How we can help</p>
                 <h2 class="h-section mt-4">Do you have high quality brochures to print? Holding an event?</h2>

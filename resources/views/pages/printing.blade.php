@@ -22,7 +22,7 @@
 <x-layout title="Printing Services" description="Digital printing, binding, laminating and finishing in Grand Cayman. Request a print quote online from Mail Boxes Etc.">
     <x-page-hero eyebrow="Printing services" title="Print that leaves a lasting impression."
         lead="From business cards and brochures to postcards and presentation booklets, what you leave with your prospect or customer leaves a lasting impression. Trust Mail Boxes Etc. to deliver quality printing with a fast turnaround."
-        image="print-centre.jpg" image-alt="The MBE print centre with digital presses">
+        image="print-centre.jpg" image-alt="A smiling print specialist at work in the print centre">
         <a href="#form-print-quote" class="btn btn-primary">Get a quote</a>
         <span class="text-sm text-white/70">Colour printing from <strong class="text-white">CI${{ number_format($mbe['print_from'], 2) }}</strong> per page</span>
     </x-page-hero>
@@ -60,7 +60,7 @@
 
     {{-- Quote form --}}
     <section class="section bg-white">
-        <div class="wrap grid gap-12 lg:grid-cols-12">
+        <div class="wrap grid grid-cols-1 gap-12 lg:grid-cols-12">
             <div class="lg:col-span-4" data-reveal>
                 <p class="eyebrow">Request a quote</p>
                 <h2 class="h-section mt-4">Tell us what you need.</h2>
@@ -226,7 +226,7 @@
                         <button type="button" class="btn btn-ghost" @click="go(step - 1)" x-show="step > 0" x-cloak><x-icon name="arrow-left" class="size-4" /> Back</button>
                         <span x-show="step === 0" class="text-xs text-muted">Step 1 of {{ count($steps) }}</span>
                         <button type="button" class="btn btn-dark" @click="next()" x-show="step < steps - 1">Continue <x-icon name="arrow-right" class="size-4" /></button>
-                        <button type="submit" class="btn btn-primary !px-6" x-show="step === steps - 1" x-cloak>Request my quote <x-icon name="arrow-right" class="size-4" /></button>
+                        <button type="submit" class="btn btn-lg btn-primary" x-show="step === steps - 1" x-cloak>Request my quote <x-icon name="arrow-right" class="size-4" /></button>
                     </div>
                 </form>
             </div>
@@ -234,7 +234,7 @@
     </section>
 
     <x-cta-band title="Not sure what you need?" text="Pop in with your file, or even just an idea. Our in-house design specialist will work with you from layout through to print.">
-        <a href="{{ route('graphic-design') }}" class="btn bg-white !px-6 !py-3.5 !text-base text-ink hover:bg-ink hover:text-white">Graphic design</a>
-        <a href="{{ route('contact') }}#locations" class="btn bg-brand-800/60 !px-6 !py-3.5 !text-base text-white ring-1 ring-white/25 hover:bg-brand-800">Find a store</a>
+        <a href="{{ route('graphic-design') }}" class="btn btn-lg btn-white">Graphic design</a>
+        <a href="{{ route('contact') }}#locations" class="btn btn-lg btn-onBrand">Find a store</a>
     </x-cta-band>
 </x-layout>

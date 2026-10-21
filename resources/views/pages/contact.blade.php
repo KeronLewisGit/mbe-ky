@@ -9,7 +9,7 @@
     </x-page-hero>
 
     <section class="section">
-        <div class="wrap grid gap-12 lg:grid-cols-12">
+        <div class="wrap grid grid-cols-1 gap-12 lg:grid-cols-12">
             <div class="lg:col-span-7" data-reveal>
                 <div class="card">
                     <h2 class="font-display text-2xl font-bold">Send us a message</h2>
@@ -43,7 +43,7 @@
                     <address class="mt-3 text-lg leading-relaxed not-italic">
                         @foreach ($mbe['corporate_address'] as $line){{ $line }}<br>@endforeach
                     </address>
-                    <a href="{{ $mbe['links']['facebook'] }}" target="_blank" rel="noopener" class="btn btn-onDark mt-6 !py-2.5">Follow MBE Cayman on Facebook <x-icon name="arrow-up-right" class="size-4" /></a>
+                    <a href="{{ $mbe['links']['facebook'] }}" target="_blank" rel="noopener" class="btn btn-sm btn-onDark mt-6">Follow MBE Cayman on Facebook <x-icon name="arrow-up-right" class="size-4" /></a>
                 </div>
             </aside>
         </div>

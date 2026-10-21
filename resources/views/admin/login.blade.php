@@ -35,7 +35,7 @@
                 <label class="flex items-center gap-2.5 text-sm">
                     <input type="checkbox" name="remember" value="1" class="size-4 rounded accent-brand-600"> Keep me signed in
                 </label>
-                <button type="submit" class="btn btn-primary w-full !py-3.5 !text-base">Sign in</button>
+                <button type="submit" class="btn btn-lg btn-primary w-full">Sign in</button>
             </form>
 
             @if (app()->isLocal())

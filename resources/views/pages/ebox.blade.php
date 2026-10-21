@@ -32,7 +32,7 @@
 
     {{-- How it works --}}
     <section class="section">
-        <div class="wrap grid gap-12 lg:grid-cols-12">
+        <div class="wrap grid grid-cols-1 gap-12 lg:grid-cols-12">
             <div class="lg:col-span-4" data-reveal>
                 <p class="eyebrow">How does E-box work?</p>
                 <h2 class="h-section mt-4">Five steps from cart to collection.</h2>
@@ -327,7 +327,7 @@
     </section>
 
     <x-cta-band title="Start shopping today." text="When you open your E-box you can immediately start shopping using the address and account number provided by email.">
-        <a href="{{ $mbe['links']['ebox_signup'] }}" target="_blank" rel="noopener" class="btn bg-white !px-6 !py-3.5 !text-base text-ink hover:bg-ink hover:text-white">Sign up for E-box <x-icon name="arrow-up-right" class="size-4" /></a>
-        <a href="mailto:{{ $mbe['emails']['ebox'] }}" class="btn bg-brand-800/60 !px-6 !py-3.5 !text-base text-white ring-1 ring-white/25 hover:bg-brand-800">{{ $mbe['emails']['ebox'] }}</a>
+        <a href="{{ $mbe['links']['ebox_signup'] }}" target="_blank" rel="noopener" class="btn btn-lg btn-white">Sign up for E-box <x-icon name="arrow-up-right" class="size-4" /></a>
+        <a href="mailto:{{ $mbe['emails']['ebox'] }}" class="btn btn-lg btn-onBrand">{{ $mbe['emails']['ebox'] }}</a>
     </x-cta-band>
 </x-layout>

@@ -14,7 +14,7 @@
 
     {{-- Sailings --}}
     <section class="section" id="sailings">
-        <div class="wrap grid gap-12 lg:grid-cols-12">
+        <div class="wrap grid grid-cols-1 gap-12 lg:grid-cols-12">
             <div class="lg:col-span-4" data-reveal>
                 <p class="eyebrow">Upcoming sailing dates</p>
                 <h2 class="h-section mt-4">Bi-weekly sailings from Miami.</h2>
@@ -68,7 +68,7 @@
 
     {{-- Rates + calculator --}}
     <section class="section bg-white" id="calculator">
-        <div class="wrap grid gap-12 lg:grid-cols-12">
+        <div class="wrap grid grid-cols-1 gap-12 lg:grid-cols-12">
             <div class="lg:col-span-5" data-reveal>
                 <p class="eyebrow">Ocean cargo shipping rates</p>
                 <h2 class="h-section mt-4">Priced by the cubic foot.</h2>
@@ -116,7 +116,7 @@
                             </div>
                         </template>
                     </div>
-                    <button type="button" class="btn btn-light mt-3 !py-2.5" @click="add()"><x-icon name="plus" class="size-4" /> Add another package</button>
+                    <button type="button" class="btn btn-sm btn-light mt-3" @click="add()"><x-icon name="plus" class="size-4" /> Add another package</button>
 
                     <div class="mt-6 rounded-2xl bg-ink p-6 text-white">
                         <div class="flex items-end justify-between gap-4">
@@ -143,7 +143,7 @@
 
     {{-- Guide + address --}}
     <section class="section">
-        <div class="wrap grid gap-12 lg:grid-cols-12">
+        <div class="wrap grid grid-cols-1 gap-12 lg:grid-cols-12">
             <div class="lg:col-span-7" data-reveal>
                 <p class="eyebrow">How to use the Ocean Shipping service</p>
                 <h2 class="h-section mt-4">Step-by-step guide.</h2>
@@ -169,7 +169,7 @@
                     <p class="text-xs font-medium tracking-[0.16em] text-brand-300 uppercase">Ocean shipping address</p>
                     <address class="mt-4 font-mono text-[15px] leading-relaxed not-italic" x-ref="address">@foreach ($ocean['address'] as $line){{ $line }}<br>@endforeach</address>
                     <p class="mt-2 text-xs text-white/50">(Miami or Doral are accepted)</p>
-                    <button type="button" class="btn btn-onDark mt-5 !py-2.5" @click="navigator.clipboard?.writeText($refs.address.innerText.trim()); copied = true; setTimeout(() => copied = false, 2000)">
+                    <button type="button" class="btn btn-sm btn-onDark mt-5" @click="navigator.clipboard?.writeText($refs.address.innerText.trim()); copied = true; setTimeout(() => copied = false, 2000)">
                         <x-icon name="copy" class="size-4" /> <span x-text="copied ? 'Copied' : 'Copy address'">Copy address</span>
                     </button>
                     <p class="mt-5 flex gap-2.5 border-t border-white/10 pt-5 text-sm text-white/70">
@@ -192,7 +192,7 @@
 
     {{-- Pre-alert form --}}
     <section class="section bg-white">
-        <div class="wrap grid gap-12 lg:grid-cols-12">
+        <div class="wrap grid grid-cols-1 gap-12 lg:grid-cols-12">
             <div class="lg:col-span-4" data-reveal>
                 <p class="eyebrow">Pre-alert &amp; invoice upload</p>
                 <h2 class="h-section mt-4">Tell us what is on the way.</h2>
@@ -245,7 +245,7 @@
 
                     <div class="hidden" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 
-                    <button type="submit" class="btn btn-primary mt-6 !px-6 !py-3.5 !text-base">Submit pre-alert <x-icon name="arrow-right" class="size-4" /></button>
+                    <button type="submit" class="btn btn-lg btn-primary mt-6">Submit pre-alert <x-icon name="arrow-right" class="size-4" /></button>
                 </form>
             </div>
         </div>

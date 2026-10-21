@@ -2,9 +2,9 @@
     $mbe = config('mbe');
 @endphp
 <x-layout title="Pack & Ship" description="Expert packing and worldwide shipping from Grand Cayman. Mail Boxes Etc. is an Authorised Shipping Centre for UPS, FedEx and DHL and offers postal services.">
-    <x-page-hero eyebrow="Pack &amp; Ship" title="Around the corner or around the world."
+    <x-page-hero eyebrow="Pack & Ship" title="Around the corner or around the world."
         lead="Whatever you want to send, the team at Mail Boxes Etc. can expertly pack it ready for safe delivery, and ship it with the courier that suits you best."
-        image="pack-ship.jpg" image-alt="An MBE team member taping up a parcel">
+        image="pack-ship.jpg" image-alt="A smiling MBE courier handing a parcel to a customer">
         <a href="#form-contact" class="btn btn-primary">Ask for a shipping quote</a>
         <a href="{{ route('contact') }}#locations" class="btn btn-onDark">Find a store</a>
     </x-page-hero>
@@ -22,7 +22,7 @@
     </section>
 
     <section class="section">
-        <div class="wrap grid gap-6 lg:grid-cols-2">
+        <div class="wrap grid grid-cols-1 gap-6 lg:grid-cols-2">
             <article class="card" data-reveal>
                 <span class="icon-tile"><x-icon name="package-open" /></span>
                 <h2 class="mt-6 font-display text-3xl font-bold">Packaging solutions &amp; packing materials</h2>

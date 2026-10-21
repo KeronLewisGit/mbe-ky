@@ -5,14 +5,14 @@
 <x-layout title="Mailbox Services" description="Virtual and physical mailboxes in Grand Cayman. Both give you a Cayman Islands street address that accepts post and courier deliveries.">
     <x-page-hero eyebrow="Mailbox services" title="A Cayman address that works like you do."
         lead="Choose between a virtual or a physical mailbox. Both give you a Cayman Islands mailing address and function just like a normal P.O. Box, with a few added benefits."
-        image="physical-mailbox.jpg" image-alt="Brass MBE mailboxes, one open with mail inside">
+        image="physical-mailbox.jpg" image-alt="A smiling customer collecting letters from his MBE mailbox">
         <a href="#compare" class="btn btn-primary">Compare mailboxes</a>
         <a href="{{ $mbe['links']['virtual_login'] }}" target="_blank" rel="noopener" class="btn btn-onDark">Virtual Mailbox sign in <x-icon name="arrow-up-right" class="size-4" /></a>
     </x-page-hero>
 
     {{-- Shared features --}}
     <section class="section">
-        <div class="wrap grid items-center gap-12 lg:grid-cols-2">
+        <div class="wrap grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div data-reveal>
                 <p class="eyebrow">Included with every mailbox</p>
                 <h2 class="h-section mt-4">Virtual and physical mailboxes available.</h2>

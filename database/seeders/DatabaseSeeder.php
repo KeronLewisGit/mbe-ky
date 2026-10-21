@@ -47,7 +47,7 @@ class DatabaseSeeder extends Seeder
         $images = [
             'refer-a-friend-and-earn' => 'refer-a-friend.jpg',
             'print-from-phone' => 'photo-gift.jpg',
-            'e-box-customers-pay-0-sales-tax-on-amazon-purchases' => 'zero-sales-tax.jpg',
+            'e-box-customers-pay-0-sales-tax-on-amazon-purchases' => 'ebox-shopper.jpg',
             'harbour-walk-store-is-now-open' => 'harbour-walk-opening.jpg',
         ];
 

@@ -63,7 +63,7 @@
                 {{ $actions ?? '' }}
                 <form method="POST" action="{{ route('admin.logout') }}" class="lg:hidden">
                     @csrf
-                    <button class="btn btn-light !py-2">Sign out</button>
+                    <button class="btn btn-sm btn-light">Sign out</button>
                 </form>
             </div>
         </header>

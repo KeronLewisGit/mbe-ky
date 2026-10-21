@@ -1,6 +1,6 @@
 <x-admin title="Dashboard">
     <x-slot:actions>
-        <a href="{{ route('admin.enquiries', ['status' => 'new']) }}" class="btn btn-dark !py-2.5">Review new enquiries</a>
+        <a href="{{ route('admin.enquiries', ['status' => 'new']) }}" class="btn btn-sm btn-dark">Review new enquiries</a>
     </x-slot:actions>
 
     <dl class="grid gap-4 sm:grid-cols-3">
