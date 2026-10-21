@@ -5,11 +5,11 @@
 <x-layout>
     {{-- Hero --}}
     <section class="relative overflow-hidden bg-ink text-white">
-        <img src="{{ asset('images/harbour-walk-opening.jpg') }}" alt="The Mail Boxes Etc. Cayman team cutting the ribbon at the opening of the Harbour Walk store" class="absolute inset-0 size-full object-cover object-[72%_22%]" fetchpriority="high">
-        <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-transparent lg:via-45% lg:to-70%"></div>
+        <img src="{{ asset('images/hero-family.jpg') }}" alt="" aria-hidden="true" class="absolute inset-0 size-full object-cover object-[50%_30%] opacity-35 blur-md">
+        <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40"></div>
         <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ink/80 to-transparent"></div>
 
-        <div class="wrap relative grid items-center gap-12 pt-14 pb-24 sm:pt-20 sm:pb-32 lg:min-h-[36rem] lg:grid-cols-12">
+        <div class="wrap relative grid items-center gap-12 pt-14 pb-24 sm:pt-20 sm:pb-28 lg:grid-cols-12">
             <div class="lg:col-span-7">
                 <p class="eyebrow !text-brand-400">Camana Bay &middot; Harbour Walk &middot; Grand Cayman</p>
                 <h1 class="mt-5 font-display text-4xl leading-[1.08] font-medium sm:text-5xl lg:text-6xl">
@@ -36,6 +36,14 @@
                     @endforeach
                 </ul>
             </div>
+
+            <div class="relative lg:col-span-5 lg:mb-12" data-reveal style="--reveal-delay: 120ms">
+                <div class="relative mx-auto aspect-[4/3] max-w-md overflow-hidden rounded-sm shadow-lift lg:ml-auto lg:max-w-none">
+                    <img src="{{ asset('images/hero-family.jpg') }}" alt="A happy Cayman family at their front door with a parcel from Mail Boxes Etc." class="size-full object-cover object-[50%_35%]" fetchpriority="high">
+                    <div class="airmail absolute inset-x-0 bottom-0 h-1.5"></div>
+                </div>
+                <p class="mt-3 text-center text-xs text-white/60 lg:text-right">Mail Boxes Etc. Cayman &middot; {{ $mbe['tagline'] }}</p>
+            </div>
         </div>
     </section>
 
@@ -56,7 +64,7 @@
                     @endforeach
                 </ul>
             </div>
-            <div class="relative order-first -mt-24 lg:order-none lg:col-span-6 lg:-mt-0 lg:-translate-y-24 lg:self-start" data-reveal style="--reveal-delay: 120ms">
+            <div class="relative order-first -mt-16 lg:order-none lg:col-span-6 lg:-mt-0 lg:-translate-y-16 lg:self-start" data-reveal style="--reveal-delay: 120ms">
                 <div class="card relative !p-0 text-ink shadow-lift" x-data="eboxCalculator(@js($mbe['ebox']))">
                     <div class="airmail h-1.5"></div>
                     <div class="p-6 sm:p-7">
