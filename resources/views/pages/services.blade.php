@@ -1,8 +1,9 @@
 <x-layout title="Additional Services" description="Passport and visa photos, Print from Phone, secure document shredding and photo booth rental at Mail Boxes Etc. Cayman Islands.">
     <x-page-hero eyebrow="Other services" title="The little things, handled too."
+        image="photo-booth.jpg" image-alt="Four friends laughing with photo booth props"
         lead="Passport photos, photo prints from your phone, secure shredding and everything you need for a photo booth. All at Camana Bay and Harbour Walk.">
         @foreach (['passport-photos' => 'Passport photos', 'print-from-phone' => 'Print from Phone', 'shredding' => 'Shredding', 'photo-booth' => 'Photo Booth Rental'] as $anchor => $label)
-            <a href="#{{ $anchor }}" class="btn btn-onDark">{{ $label }}</a>
+            <a href="#{{ $anchor }}" class="btn btn-sm btn-onDark">{{ $label }}</a>
         @endforeach
     </x-page-hero>
 

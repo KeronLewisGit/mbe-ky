@@ -7,6 +7,7 @@
 @endphp
 <x-layout title="Ocean Ship" description="Ocean freight from Miami to Grand Cayman for large and over-sized cargo. See sailing dates, estimate your rate and pre-alert your shipment online.">
     <x-page-hero eyebrow="Ocean Ship" title="Large cargo shipping via ocean freight."
+        image="ocean-ship.jpg" image-alt="A smiling couple carrying a chair through their new home, surrounded by delivered boxes"
         lead="Ideal for large cargo and over-sized packages. With bi-weekly sailings from Miami, our ocean freight service is a cost-effective choice for large purchases. Service includes insurance and Customs clearance to give you peace of mind.">
         <a href="#form-ocean-pre-alert" class="btn btn-primary">Ocean Ship pre-alert</a>
         <a href="#calculator" class="btn btn-onDark">Estimate your rate</a>

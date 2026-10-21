@@ -126,7 +126,7 @@
         @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-sm px-5 py-2.5 text-sm leading-tight font-medium whitespace-nowrap transition duration-200;
     }
     .btn-lg,
-    .hero-actions .btn {
+    .hero-actions .btn:not(.btn-sm) {
         @apply min-h-12 px-6 py-3 text-base;
     }
     .btn-sm {

@@ -3,6 +3,7 @@
 @endphp
 <x-layout title="Contact & Locations" description="Contact Mail Boxes Etc. Cayman Islands. Store hours, directions and contacts for Camana Bay and Harbour Walk.">
     <x-page-hero eyebrow="Contact us" title="Have a question or comment?"
+        image="harbour-walk-opening.jpg" image-alt="The MBE Cayman team smiling as they cut the ribbon at the Harbour Walk store"
         lead="Send us a message, call the team, or drop into either of our Grand Cayman stores.">
         <a href="tel:{{ $mbe['phone_href'] }}" class="btn btn-primary"><x-icon name="phone" class="size-4" /> {{ $mbe['phone'] }}</a>
         <a href="#locations" class="btn btn-onDark">Store hours &amp; directions</a>

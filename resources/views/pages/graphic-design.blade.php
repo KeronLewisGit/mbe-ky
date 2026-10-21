@@ -1,5 +1,6 @@
 <x-layout title="Graphic Design" description="In-house graphic design at Mail Boxes Etc. Cayman Islands. From design and layout all the way through printing.">
     <x-page-hero eyebrow="Graphic design" title="Designed and printed under one roof."
+        image="business-owner.jpg" image-alt="A smiling shop owner with a tablet at her open door"
         lead="Our in-house design specialist will work with you from the design and layout stages all the way through printing. You’ll definitely get more attention with a smart, professional product."
         :crumb="['Printing', route('printing')]">
         <a href="#form-contact" class="btn btn-primary">Start a design project</a>

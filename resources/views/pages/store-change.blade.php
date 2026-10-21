@@ -4,6 +4,7 @@
 @endphp
 <x-layout title="Change your E-box pick-up store" description="Move your E-box package collection between Mail Boxes Etc. Camana Bay and Harbour Walk.">
     <x-page-hero eyebrow="E-box" title="Store change request for E-box package collection."
+        image="online-shopper.jpg" image-alt="A smiling woman at home with her E-box parcel"
         lead="Conveniently located in Camana Bay and Harbour Walk. Choose where you would like to collect your E-box packages and keep using the same CBY#."
         :crumb="['E-box', route('ebox')]" />
 
