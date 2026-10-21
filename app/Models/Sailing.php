@@ -26,6 +26,12 @@ class Sailing extends Model
         return $this->cutoff_date->toDateString() < self::today();
     }
 
+    /** Archived once it has arrived on island, using the same Cayman-time day as the public Ocean Ship page. */
+    public function isArchived(): bool
+    {
+        return $this->in_hand_date->toDateString() < self::today();
+    }
+
     /** A sailing counts as sailed once its day in Cayman time is over. */
     public function hasSailed(): bool
     {

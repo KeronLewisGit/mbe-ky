@@ -10,7 +10,7 @@
                     <thead><tr><th>Cut-off</th><th>Sails from Miami</th><th>In hand</th><th></th><th></th></tr></thead>
                     <tbody>
                         @forelse ($sailings as $sailing)
-                            @php($past = $sailing->in_hand_date->lt(today()))
+                            @php($past = $sailing->isArchived())
                             <tr @class(['opacity-50' => $past])>
                                 <td colspan="3" class="!p-0">
                                     <form id="sailing-{{ $sailing->id }}" method="POST" action="{{ route('admin.sailings.update', $sailing) }}" class="grid grid-cols-3 gap-2 p-2">

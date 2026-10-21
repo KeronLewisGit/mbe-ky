@@ -2,14 +2,14 @@
     <form method="GET" class="flex flex-wrap items-end gap-3">
         <label class="min-w-56 flex-1">
             <span class="label">Search</span>
-            <input type="search" name="q" value="{{ request('q') }}" placeholder="Name, email or reference" class="input">
+            <input type="search" name="q" value="{{ $filters['q'] }}" placeholder="Name, email or reference" class="input">
         </label>
         <label>
             <span class="label">Type</span>
             <select name="type" class="input" onchange="this.form.submit()">
                 <option value="">All types</option>
                 @foreach (\App\Models\Enquiry::TYPES as $type => $meta)
-                    <option value="{{ $type }}" @selected(request('type') === $type)>{{ $meta['label'] }}</option>
+                    <option value="{{ $type }}" @selected($filters['type'] === $type)>{{ $meta['label'] }}</option>
                 @endforeach
             </select>
         </label>
@@ -18,12 +18,12 @@
             <select name="status" class="input" onchange="this.form.submit()">
                 <option value="">Any status</option>
                 @foreach (\App\Models\Enquiry::STATUSES as $status => $label)
-                    <option value="{{ $status }}" @selected(request('status') === $status)>{{ $label }}</option>
+                    <option value="{{ $status }}" @selected($filters['status'] === $status)>{{ $label }}</option>
                 @endforeach
             </select>
         </label>
         <button class="btn btn-dark">Filter</button>
-        @if (request()->hasAny(['q', 'type', 'status']))
+        @if (array_filter($filters))
             <a href="{{ route('admin.enquiries') }}" class="btn btn-ghost">Clear</a>
         @endif
     </form>

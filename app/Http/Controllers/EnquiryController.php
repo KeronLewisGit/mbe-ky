@@ -8,6 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
 class EnquiryController extends Controller
@@ -32,6 +33,8 @@ class EnquiryController extends Controller
             'terms.accepted' => 'Please accept the terms & conditions to continue.',
             'cby_number.regex' => 'Enter your CBY number, for example CBY 12345.',
             'attachment.required' => 'Please attach your invoice.',
+            'attachment.uploaded' => 'That file is too large. Please attach a file under '.Content::uploadLimitMb().' MB.',
+            'attachment.max' => 'That file is too large. Please attach a file under '.Content::uploadLimitMb().' MB.',
         ], [
             'cby_number' => 'CBY number',
             'bw_single' => 'black & white single sided',
@@ -64,7 +67,7 @@ class EnquiryController extends Controller
             }
 
             $attributes['attachment_path'] = $path;
-            $attributes['attachment_name'] = $file->getClientOriginalName();
+            $attributes['attachment_name'] = Str::limit($file->getClientOriginalName(), 150, '');
         }
 
         $enquiry = Enquiry::create($attributes);

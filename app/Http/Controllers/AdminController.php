@@ -65,10 +65,14 @@ class AdminController extends Controller
 
     public function enquiries(Request $request): View
     {
+        $filters = collect(['q', 'type', 'status'])
+            ->mapWithKeys(fn (string $key) => [$key => is_string($request->query($key)) ? trim($request->query($key)) : ''])
+            ->all();
+
         $enquiries = Enquiry::query()
-            ->when($request->query('type'), fn ($q, $type) => $q->where('type', $type))
-            ->when($request->query('status'), fn ($q, $status) => $q->where('status', $status))
-            ->when($request->query('q'), fn ($q, $term) => $q->where(fn ($q) => $q
+            ->when($filters['type'], fn ($q, $type) => $q->where('type', $type))
+            ->when($filters['status'], fn ($q, $status) => $q->where('status', $status))
+            ->when($filters['q'], fn ($q, $term) => $q->where(fn ($q) => $q
                 ->where('name', 'like', "%{$term}%")
                 ->orWhere('email', 'like', "%{$term}%")
                 ->orWhere('reference', 'like', "%{$term}%")
@@ -77,7 +81,7 @@ class AdminController extends Controller
             ->paginate(15)
             ->withQueryString();
 
-        return view('admin.enquiries', ['enquiries' => $enquiries]);
+        return view('admin.enquiries', ['enquiries' => $enquiries, 'filters' => $filters]);
     }
 
     public function enquiry(Enquiry $enquiry): View
@@ -152,7 +156,7 @@ class AdminController extends Controller
         Announcement::create($request->validate([
             'message' => ['required', 'string', 'max:140'],
             'link_text' => ['nullable', 'string', 'max:40', 'required_with:link_url'],
-            'link_url' => ['nullable', 'string', 'max:255', 'regex:/^(\/|https:\/\/)/'],
+            'link_url' => ['nullable', 'string', 'max:255', 'regex:/^(\/(?!\/)|https:\/\/)/'],
             'starts_on' => ['nullable', 'date'],
             'ends_on' => ['nullable', 'date', 'after_or_equal:starts_on'],
         ], ['link_url.regex' => 'Links must start with / (a page on this site) or https://.']));

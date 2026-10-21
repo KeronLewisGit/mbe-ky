@@ -4,11 +4,13 @@ namespace Tests\Feature;
 
 use App\Models\Announcement;
 use App\Models\Enquiry;
+use App\Models\Sailing;
 use App\Models\User;
 use Database\Seeders\DatabaseSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Session\TokenMismatchException;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
@@ -122,5 +124,44 @@ class BackendHardeningTest extends TestCase
             ->assertSessionHas('session_expired')
             ->assertSessionHasInput('name', 'Kept Name')
             ->assertSessionMissing('_old_input._token');
+    }
+
+    public function test_announcement_links_cannot_be_protocol_relative(): void
+    {
+        $this->actingAs(User::first())
+            ->post('/admin/announcements', ['message' => 'Hi', 'link_text' => 'Go', 'link_url' => '//evil.example'])
+            ->assertSessionHasErrors('link_url');
+    }
+
+    public function test_tampered_array_filters_do_not_break_admin_search(): void
+    {
+        $this->actingAs(User::first());
+
+        $this->get('/admin/enquiries?q[]=x')->assertOk();
+        $this->get('/admin/enquiries?type[]=x&status[]=y')->assertOk();
+    }
+
+    public function test_an_archived_sailing_uses_the_cayman_calendar_day(): void
+    {
+        $sailing = new Sailing(['cutoff_date' => '2026-10-05', 'sailing_date' => '2026-10-08', 'in_hand_date' => '2026-10-16']);
+
+        $this->travelTo(Carbon::parse('2026-10-16 21:00', 'America/Cayman'));
+        $this->assertFalse($sailing->isArchived());
+
+        $this->travelTo(Carbon::parse('2026-10-17 00:30', 'America/Cayman'));
+        $this->assertTrue($sailing->isArchived());
+    }
+
+    public function test_an_oversized_invoice_gets_a_clear_message(): void
+    {
+        Storage::fake();
+
+        $this->post('/enquiries/ocean-pre-alert', [
+            'name' => 'Test Shipper', 'cby_number' => 'CBY 12345', 'email' => 'shipper@example.com',
+            'tracking_number' => '1Z999', 'description' => 'Table', 'invoice_value' => '10', 'instruction' => 'Ship',
+            'attachment' => UploadedFile::fake()->create('big.pdf', 9000, 'application/pdf'),
+        ])->assertSessionHasErrorsIn('ocean-pre-alert', ['attachment']);
+
+        $this->assertStringContainsString('too large', session('errors')->getBag('ocean-pre-alert')->first('attachment'));
     }
 }
