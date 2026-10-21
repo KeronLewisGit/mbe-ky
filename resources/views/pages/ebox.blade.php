@@ -6,7 +6,7 @@
 <x-layout title="E-box: your U.S. address" description="E-box gives you a U.S. address for online shopping. Orders arrive at your MBE store in Grand Cayman in 5–7 business days, Customs cleared.">
     <x-page-hero eyebrow="E-box" title="Need to order something online?"
         lead="E-box provides you with a U.S. address so you can shop online and have your orders delivered directly to your nearest MBE store."
-        image="zero-sales-tax.jpg" image-alt="E-box customers pay 0% sales tax on Amazon and eBay purchases">
+        image="ebox-shopper.jpg" image-alt="A smiling E-box customer at home shopping online on her phone with a parcel beside her">
         <a href="{{ $mbe['links']['ebox_signup'] }}" target="_blank" rel="noopener" class="btn btn-primary">Sign up for E-box <x-icon name="arrow-up-right" class="size-4" /></a>
         <a href="{{ $mbe['links']['ebox_login'] }}" target="_blank" rel="noopener" class="btn btn-onDark">Already a customer? Log in</a>
     </x-page-hero>
