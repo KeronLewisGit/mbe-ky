@@ -6,7 +6,7 @@
         @endif
     </div>
     <div class="flex flex-1 flex-col p-6">
-        <p class="flex items-center gap-2 text-xs font-semibold text-muted">
+        <p class="flex items-center gap-2 text-xs font-medium text-muted">
             <span class="rounded-full bg-brand-50 px-2.5 py-1 text-brand-700">{{ $post->category }}</span>
             <time datetime="{{ $post->published_at->toDateString() }}">{{ $post->published_at->format('j M Y') }}</time>
         </p>

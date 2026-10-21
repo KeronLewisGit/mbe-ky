@@ -39,7 +39,7 @@
             </div>
             <ul class="mt-10 flex flex-wrap gap-2.5" data-reveal>
                 @foreach ([...$mbe['print_products'], 'Laminating', 'Binding', 'Custom journals'] as $product)
-                    <li class="rounded-full bg-white px-4 py-2 text-sm font-semibold ring-1 ring-line">{{ $product }}</li>
+                    <li class="rounded-full bg-white px-4 py-2 text-sm font-medium ring-1 ring-line">{{ $product }}</li>
                 @endforeach
             </ul>
             <div class="mt-10 grid gap-5 md:grid-cols-3">
@@ -68,11 +68,11 @@
                 <dl class="mt-8 space-y-4 text-sm">
                     <div class="flex items-center gap-4">
                         <span class="icon-tile"><x-icon name="mail" /></span>
-                        <div><dt class="text-muted">Print team</dt><dd><a href="mailto:{{ $mbe['emails']['print'] }}" class="font-semibold">{{ $mbe['emails']['print'] }}</a></dd></div>
+                        <div><dt class="text-muted">Print team</dt><dd><a href="mailto:{{ $mbe['emails']['print'] }}" class="font-medium">{{ $mbe['emails']['print'] }}</a></dd></div>
                     </div>
                     <div class="flex items-center gap-4">
                         <span class="icon-tile"><x-icon name="phone" /></span>
-                        <div><dt class="text-muted">Call</dt><dd><a href="tel:{{ $mbe['phone_href'] }}" class="font-semibold">{{ $mbe['phone'] }}</a></dd></div>
+                        <div><dt class="text-muted">Call</dt><dd><a href="tel:{{ $mbe['phone_href'] }}" class="font-medium">{{ $mbe['phone'] }}</a></dd></div>
                     </div>
                 </dl>
             </div>
@@ -89,7 +89,7 @@
                             <li>
                                 <button type="button" class="block w-full text-left" @click="if ({{ $index }} < step) go({{ $index }})" :aria-current="step === {{ $index }} ? 'step' : null">
                                     <span class="block h-1.5 rounded-full transition" :class="step >= {{ $index }} ? 'bg-brand-600' : 'bg-line'"></span>
-                                    <span class="mt-2 hidden text-xs font-semibold sm:block" :class="step >= {{ $index }} ? 'text-ink' : 'text-muted'">{{ $index + 1 }}. {{ $label }}</span>
+                                    <span class="mt-2 hidden text-xs font-medium sm:block" :class="step >= {{ $index }} ? 'text-ink' : 'text-muted'">{{ $index + 1 }}. {{ $label }}</span>
                                 </button>
                             </li>
                         @endforeach
@@ -130,7 +130,7 @@
                                         <input type="radio" name="paper_size" value="{{ $size }}" class="sr-only" x-model="size">
                                         <span class="items-center text-center">
                                             <span class="flex h-16 items-end"><span class="block rounded-sm border-2 border-ink/70 bg-white {{ $shape }}"></span></span>
-                                            <strong class="mt-2 font-semibold">{{ $size }}</strong>
+                                            <strong class="mt-2 font-medium">{{ $size }}</strong>
                                             <span class="text-xs text-muted">{{ $dims }}</span>
                                         </span>
                                     </label>
@@ -168,7 +168,7 @@
                                         @foreach ($choices as $choice)
                                             <label class="cursor-pointer">
                                                 <input type="radio" name="{{ $name }}" value="{{ $choice }}" class="peer sr-only" @checked($old($name, $default) === $choice)>
-                                                <span class="block rounded-full px-4 py-2 text-sm font-semibold text-muted transition peer-checked:bg-ink peer-checked:text-white">{{ $choice }}</span>
+                                                <span class="block rounded-full px-4 py-2 text-sm font-medium text-muted transition peer-checked:bg-ink peer-checked:text-white">{{ $choice }}</span>
                                             </label>
                                         @endforeach
                                     </div>
@@ -185,7 +185,7 @@
                                 ] as $value => $short)
                                     <label class="option">
                                         <input type="radio" name="proofing" value="{{ $value }}" class="sr-only" @checked($old('proofing', 'I would like an electronic proof emailed to me') === $value)>
-                                        <span><strong class="font-semibold">{{ $short }}</strong><span class="text-xs text-muted">{{ $value }}</span></span>
+                                        <span><strong class="font-medium">{{ $short }}</strong><span class="text-xs text-muted">{{ $value }}</span></span>
                                     </label>
                                 @endforeach
                             </div>
@@ -209,7 +209,7 @@
                                 <span class="label">Upload your file <span class="font-normal text-muted">(helps us quote accurately)</span></span>
                                 <label for="print-attachment" class="flex cursor-pointer flex-col items-center gap-2 rounded-2xl border-2 border-dashed border-line bg-white p-6 text-center text-sm text-muted transition hover:border-brand-400">
                                     <x-icon name="upload" class="size-6 text-brand-600" />
-                                    <span class="font-semibold text-ink" x-text="name || 'Choose a file'">Choose a file</span>
+                                    <span class="font-medium text-ink" x-text="name || 'Choose a file'">Choose a file</span>
                                     <span class="text-xs">PDF, TIF, JPEG, PNG, DOCX or EPUB, up to {{ \App\Support\Content::uploadLimitMb() }} MB</span>
                                 </label>
                                 <input id="print-attachment" type="file" name="attachment" accept=".pdf,.tif,.tiff,.jpg,.jpeg,.png,.docx,.epub" class="sr-only" @change="pick">

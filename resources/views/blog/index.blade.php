@@ -13,7 +13,7 @@
                         <img src="{{ asset('images/'.$featured->image) }}" alt="" class="size-full object-cover transition duration-700 group-hover:scale-105">
                     </div>
                     <div class="flex flex-col justify-center p-8 sm:p-12">
-                        <p class="flex items-center gap-2 text-xs font-semibold text-muted">
+                        <p class="flex items-center gap-2 text-xs font-medium text-muted">
                             <span class="rounded-full bg-brand-600 px-2.5 py-1 text-white">Latest</span>
                             <time datetime="{{ $featured->published_at->toDateString() }}">{{ $featured->published_at->format('j F Y') }}</time>
                         </p>

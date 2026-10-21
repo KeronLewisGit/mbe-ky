@@ -32,14 +32,14 @@
                                 <x-icon :name="$icon" class="size-5 shrink-0 text-brand-600" />
                                 <div class="min-w-0">
                                     <p class="text-muted">{{ $label }}</p>
-                                    <a href="mailto:{{ $email }}" class="font-semibold hover:text-brand-700">{{ $email }}</a>
+                                    <a href="mailto:{{ $email }}" class="font-medium hover:text-brand-700">{{ $email }}</a>
                                 </div>
                             </li>
                         @endforeach
                     </ul>
                 </div>
                 <div class="rounded-3xl bg-ink p-6 text-white sm:p-8">
-                    <p class="text-xs font-semibold tracking-[0.16em] text-white/50 uppercase">Corporate address</p>
+                    <p class="text-xs font-medium tracking-[0.16em] text-white/50 uppercase">Corporate address</p>
                     <address class="mt-3 text-lg leading-relaxed not-italic">
                         @foreach ($mbe['corporate_address'] as $line){{ $line }}<br>@endforeach
                     </address>

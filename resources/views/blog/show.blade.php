@@ -6,7 +6,7 @@
                     <a href="{{ route('home') }}" class="hover:text-white">Home</a><span>/</span>
                     <a href="{{ route('blog') }}" class="hover:text-white">News</a>
                 </nav>
-                <p class="flex flex-wrap items-center gap-3 text-xs font-semibold text-white/60">
+                <p class="flex flex-wrap items-center gap-3 text-xs font-medium text-white/60">
                     <span class="rounded-full bg-brand-600 px-2.5 py-1 text-white">{{ $post->category }}</span>
                     <time datetime="{{ $post->published_at->toDateString() }}">{{ $post->published_at->format('j F Y') }}</time>
                     <span>&middot; {{ $post->readingMinutes() }} min read</span>

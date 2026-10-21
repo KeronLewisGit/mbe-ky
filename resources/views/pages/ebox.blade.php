@@ -111,10 +111,10 @@
                             <div class="flex items-center justify-between">
                                 <h3 class="font-display text-xl font-bold">{{ $plan['name'] }}</h3>
                                 @if ($key === 'pro')
-                                    <span class="rounded-full bg-brand-50 px-2.5 py-1 text-xs font-semibold text-brand-700">Best value</span>
+                                    <span class="rounded-full bg-brand-50 px-2.5 py-1 text-xs font-medium text-brand-700">Best value</span>
                                 @endif
                             </div>
-                            <p class="mt-4 font-display text-4xl font-extrabold tabular-nums" x-text="chargeable ? money(cost('{{ $key }}')) : 'CI$ –'">CI$ –</p>
+                            <p class="mt-4 font-display text-4xl font-bold tabular-nums" x-text="chargeable ? money(cost('{{ $key }}')) : 'CI$ –'">CI$ –</p>
                             <p class="mt-1 text-xs text-muted">CI${{ number_format($plan['first_lb'], 2) }} first lb, then CI${{ number_format($plan['per_lb'], 2) }}/lb</p>
                             <p class="mt-3 border-t border-line pt-3 text-xs text-muted">{{ $plan['membership'] ? 'Plus CI$'.$plan['membership'].'/year membership' : 'No membership fee' }}</p>
                         </div>
@@ -137,7 +137,7 @@
             <div class="flex gap-1 overflow-x-auto rounded-full bg-white p-1.5 ring-1 ring-line sm:w-fit" role="tablist">
                 @foreach (['overview' => 'Description', 'pricing' => 'Pricing', 'faq' => 'FAQ', 'points' => 'MBE Points'] as $key => $label)
                     <button type="button" role="tab" @click="tab = '{{ $key }}'" :aria-selected="tab === '{{ $key }}'"
-                        class="rounded-full px-5 py-2.5 text-sm font-semibold whitespace-nowrap transition"
+                        class="rounded-full px-5 py-2.5 text-sm font-medium whitespace-nowrap transition"
                         :class="tab === '{{ $key }}' ? 'bg-ink text-white shadow-sm' : 'text-muted hover:text-ink'">{{ $label }}</button>
                 @endforeach
             </div>
@@ -164,7 +164,7 @@
                         ] as [$icon, $title, $text])
                             <div class="flex gap-3 rounded-2xl bg-white p-4 ring-1 ring-line/70">
                                 <x-icon :name="$icon" class="mt-0.5 size-5 shrink-0 text-brand-600" />
-                                <div><p class="text-sm font-semibold">{{ $title }}</p><p class="mt-0.5 text-xs text-muted">{{ $text }}</p></div>
+                                <div><p class="text-sm font-medium">{{ $title }}</p><p class="mt-0.5 text-xs text-muted">{{ $text }}</p></div>
                             </div>
                         @endforeach
                     </div>
@@ -186,7 +186,7 @@
                         </ul>
                     </div>
                     <div class="rounded-3xl bg-ink p-6 text-white sm:p-8">
-                        <p class="text-xs font-semibold tracking-[0.16em] text-white/50 uppercase">Your E-box address looks like this</p>
+                        <p class="text-xs font-medium tracking-[0.16em] text-white/50 uppercase">Your E-box address looks like this</p>
                         <address class="mt-4 font-mono text-sm leading-relaxed not-italic">
                             @foreach ($ebox['address'] as $line){{ $line }}<br>@endforeach
                         </address>
@@ -210,8 +210,8 @@
                         </thead>
                         <tbody>
                             <tr><td class="font-medium">Membership fee</td>@foreach ($ebox['plans'] as $plan)<td>{{ $plan['membership'] ? 'CI$'.$plan['membership'].'/year' : 'CI$0' }}</td>@endforeach</tr>
-                            <tr><td class="font-medium">Flat fee, first pound</td>@foreach ($ebox['plans'] as $plan)<td class="font-semibold">CI${{ number_format($plan['first_lb'], 2) }}</td>@endforeach</tr>
-                            <tr><td class="font-medium">Package shipping rate<br><span class="text-xs font-normal text-muted">Each additional pound</span></td>@foreach ($ebox['plans'] as $plan)<td class="font-semibold">CI${{ number_format($plan['per_lb'], 2) }}/lb</td>@endforeach</tr>
+                            <tr><td class="font-medium">Flat fee, first pound</td>@foreach ($ebox['plans'] as $plan)<td class="font-medium">CI${{ number_format($plan['first_lb'], 2) }}</td>@endforeach</tr>
+                            <tr><td class="font-medium">Package shipping rate<br><span class="text-xs font-normal text-muted">Each additional pound</span></td>@foreach ($ebox['plans'] as $plan)<td class="font-medium">CI${{ number_format($plan['per_lb'], 2) }}/lb</td>@endforeach</tr>
                             <tr><td class="font-medium">Mail &amp; documents, 0–16 oz<br><span class="text-xs font-normal text-muted">Standard package rates apply above 16 oz</span></td>@foreach ($ebox['plans'] as $plan)<td>CI${{ number_format($ebox['document_per_oz'], 2) }}/oz</td>@endforeach</tr>
                             <tr><td class="font-medium">Earns MBE Points?</td>@foreach ($ebox['plans'] as $plan)<td><x-icon name="check" class="size-5 text-emerald-600" /></td>@endforeach</tr>
                             <tr><td class="font-medium">Choosing a plan</td>@foreach ($ebox['plans'] as $plan)<td class="text-muted">{{ $plan['blurb'] }}</td>@endforeach</tr>
@@ -220,7 +220,7 @@
                 </div>
                 <div class="mt-6 flex gap-3 rounded-2xl bg-brand-50 p-5 text-sm text-brand-900 ring-1 ring-brand-100">
                     <x-icon name="info" class="mt-0.5 size-5 shrink-0 text-brand-600" />
-                    <p><strong class="font-semibold">Important.</strong> All rates in C.I. dollars. Imported goods are subject to duties and tax assessed by Customs and Border Control in accordance with the Cayman Islands Customs Law. The shipping rates are applied to the greater of actual weight and dimensional weight. See the FAQ for more information.</p>
+                    <p><strong class="font-medium">Important.</strong> All rates in C.I. dollars. Imported goods are subject to duties and tax assessed by Customs and Border Control in accordance with the Cayman Islands Customs Law. The shipping rates are applied to the greater of actual weight and dimensional weight. See the FAQ for more information.</p>
                 </div>
             </div>
 
@@ -242,7 +242,7 @@
                             <div class="mt-4 divide-y divide-line overflow-hidden rounded-2xl bg-white ring-1 ring-line/70">
                                 @foreach ($group['items'] as $item)
                                     <details class="group" x-show="@js(Str::lower($item['q'].' '.strip_tags($item['a']))).includes(q.toLowerCase())">
-                                        <summary class="flex list-none items-center justify-between gap-4 p-5 font-semibold transition hover:bg-paper [&::-webkit-details-marker]:hidden">
+                                        <summary class="flex list-none items-center justify-between gap-4 p-5 font-medium transition hover:bg-paper [&::-webkit-details-marker]:hidden">
                                             {{ $item['q'] }}
                                             <x-icon name="plus" class="size-5 shrink-0 text-brand-600 transition group-open:rotate-45" />
                                         </summary>
@@ -305,16 +305,16 @@
             </div>
             <div class="mt-10 grid gap-6 lg:grid-cols-2">
                 <div class="card bg-paper" data-reveal>
-                    <span class="inline-flex rounded-full bg-ink px-3 py-1 text-xs font-semibold text-white">Step 1</span>
+                    <span class="inline-flex rounded-full bg-ink px-3 py-1 text-xs font-medium text-white">Step 1</span>
                     <h3 class="mt-4 font-display text-xl font-bold">Register in COLS</h3>
                     <p class="mt-2 text-sm text-muted">Select applicant type Individual, fill in the form, upload one identification document then press Send Request. You will be notified by Customs via email within 3 business days once your submission is approved.</p>
                     <p class="mt-2 text-sm text-muted">Already have a TIN (Trader Identification Number)? Go directly to step 2.</p>
                     <a href="{{ $mbe['links']['cols_register'] }}" target="_blank" rel="noopener" class="btn btn-dark mt-6">Customs registration <x-icon name="arrow-up-right" class="size-4" /></a>
                 </div>
                 <div class="card bg-paper" data-reveal style="--reveal-delay: 100ms">
-                    <span class="inline-flex rounded-full bg-ink px-3 py-1 text-xs font-semibold text-white">Step 2</span>
+                    <span class="inline-flex rounded-full bg-ink px-3 py-1 text-xs font-medium text-white">Step 2</span>
                     <h3 class="mt-4 font-display text-xl font-bold">Appoint Mail Boxes Etc. as your agent</h3>
-                    <ol class="mt-3 list-decimal space-y-1.5 pl-5 text-sm text-muted marker:font-semibold marker:text-brand-700">
+                    <ol class="mt-3 list-decimal space-y-1.5 pl-5 text-sm text-muted marker:font-medium marker:text-brand-700">
                         <li>Log into COLS and click &ldquo;Declarations&rdquo;.</li>
                         <li>In the left menu click &ldquo;Agent Authorization&rdquo;.</li>
                         <li>Select Mail Boxes Etc. in &ldquo;Available Agents&rdquo; and move it to &ldquo;Authorized Agent&rdquo;.</li>

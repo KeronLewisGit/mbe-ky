@@ -10,7 +10,7 @@
             <p class="mt-0.5 text-sm text-emerald-900/80">
                 {{ $message }}
                 @if ($success['reference'] ?? null)
-                    Your reference is <strong class="font-semibold">{{ $success['reference'] }}</strong>.
+                    Your reference is <strong class="font-medium">{{ $success['reference'] }}</strong>.
                 @endif
             </p>
         </div>
@@ -18,6 +18,6 @@
 @elseif ($errors->getBag($type)->any())
     <div class="mb-6 flex gap-3 rounded-2xl bg-brand-50 p-4 text-sm text-brand-900 ring-1 ring-brand-200" role="alert">
         <x-icon name="triangle-alert" class="mt-0.5 size-5 shrink-0 text-brand-600" />
-        <p><strong class="font-semibold">Please check the form.</strong> {{ $errors->getBag($type)->count() }} {{ Str::plural('field', $errors->getBag($type)->count()) }} need your attention.</p>
+        <p><strong class="font-medium">Please check the form.</strong> {{ $errors->getBag($type)->count() }} {{ Str::plural('field', $errors->getBag($type)->count()) }} need your attention.</p>
     </div>
 @endif

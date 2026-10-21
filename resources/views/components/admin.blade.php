@@ -26,7 +26,7 @@
             <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-3">
                 <img src="{{ asset('images/logo.png') }}" alt="Mail Boxes Etc." class="h-8 w-auto invert">
             </a>
-            <span class="rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-semibold tracking-widest uppercase">Admin</span>
+            <span class="rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-medium tracking-widest uppercase">Admin</span>
         </div>
         <nav class="flex gap-1 overflow-x-auto px-3 pb-3 lg:flex-1 lg:flex-col lg:pb-0" aria-label="Admin">
             @foreach ($links as [$route, $label, $icon, $active])

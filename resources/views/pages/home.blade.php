@@ -4,26 +4,24 @@
 @endphp
 <x-layout>
     {{-- Hero --}}
-    <section class="relative overflow-hidden">
-        <div class="grid-paper absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent_85%)]"></div>
-        <div class="absolute -top-48 -right-40 size-[38rem] rounded-full bg-brand-200/50 blur-3xl"></div>
+    <section class="relative overflow-hidden bg-ink text-white">
+        <img src="{{ asset('images/harbour-walk-opening.jpg') }}" alt="The Mail Boxes Etc. Cayman team cutting the ribbon at the opening of the Harbour Walk store" class="absolute inset-0 size-full object-cover object-[72%_22%]" fetchpriority="high">
+        <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-transparent lg:via-45% lg:to-70%"></div>
+        <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ink/80 to-transparent"></div>
 
-        <div class="wrap relative grid items-center gap-12 pt-12 pb-16 sm:pt-20 sm:pb-24 lg:grid-cols-12">
+        <div class="wrap relative grid items-center gap-12 pt-14 pb-24 sm:pt-20 sm:pb-32 lg:min-h-[36rem] lg:grid-cols-12">
             <div class="lg:col-span-7">
-                <p class="chip">
-                    <span class="size-1.5 rounded-full bg-brand-600"></span>
-                    Camana Bay &middot; Harbour Walk &middot; Serving Cayman for over a decade
-                </p>
-                <h1 class="mt-6 font-display text-5xl leading-[0.98] font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
-                    Shop the world.<br>
-                    <span class="text-brand-600">We&rsquo;ll bring it home.</span>
+                <p class="eyebrow !text-brand-400">Camana Bay &middot; Harbour Walk &middot; Grand Cayman</p>
+                <h1 class="mt-5 font-display text-4xl leading-[1.08] font-medium sm:text-5xl lg:text-6xl">
+                    Your local post, parcel and print centre.
                 </h1>
-                <p class="lead mt-6 max-w-xl">
-                    A U.S. address for online shopping, mailboxes with a real street address, worldwide courier and professional printing. Whatever you need to send, receive or print, the team at Mail Boxes Etc. handles it for you.
+                <span class="brand-rule"></span>
+                <p class="mt-6 max-w-xl text-lg leading-relaxed text-white/80">
+                    Proudly serving Cayman for over a decade. A U.S. address for online shopping, mailboxes with a real street address, worldwide courier and professional printing, from one friendly island team. Shop the world and we&rsquo;ll bring it home.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="{{ route('ebox') }}" class="btn btn-primary !px-6 !py-3.5 !text-base">Get a U.S. address <x-icon name="arrow-right" class="size-4" /></a>
-                    <a href="{{ route('mailboxes') }}" class="btn btn-light !px-6 !py-3.5 !text-base">Find a mailbox</a>
+                    <a href="{{ route('contact') }}#contact" class="btn btn-onDark !px-6 !py-3.5 !text-base">Ask for a quote</a>
                 </div>
                 <ul class="mt-10 grid max-w-xl gap-x-6 gap-y-3 text-sm sm:grid-cols-3">
                     @foreach ([
@@ -32,26 +30,40 @@
                         ['shield-check', 'Customs cleared', 'for you, by us'],
                     ] as [$icon, $strong, $text])
                         <li class="flex items-start gap-2.5">
-                            <x-icon :name="$icon" class="mt-0.5 size-[18px] shrink-0 text-brand-600" />
-                            <span><strong class="block font-semibold">{{ $strong }}</strong><span class="text-muted">{{ $text }}</span></span>
+                            <x-icon :name="$icon" class="mt-0.5 size-[18px] shrink-0 text-brand-400" />
+                            <span><strong class="block font-medium">{{ $strong }}</strong><span class="text-white/65">{{ $text }}</span></span>
                         </li>
                     @endforeach
                 </ul>
             </div>
+        </div>
+    </section>
 
-            {{-- Live estimator --}}
-            <div class="relative lg:col-span-5" data-reveal style="--reveal-delay: 200ms">
-                <div class="absolute -bottom-7 -left-6 z-10 hidden rotate-[-5deg] rounded-2xl bg-ink px-4 py-2.5 text-white shadow-lift sm:block animate-float">
-                    <p class="text-[10px] font-semibold tracking-widest text-white/50 uppercase">Miami &rarr; Grand Cayman</p>
-                    <p class="font-display text-lg font-bold">{{ $mbe['ebox']['transit'] }}</p>
-                </div>
-                <div class="card relative !p-0 shadow-lift" x-data="eboxCalculator(@js($mbe['ebox']))">
-                    <div class="airmail h-1.5 rounded-t-3xl"></div>
+    {{-- Live estimator --}}
+    <section class="relative z-10 bg-paper" aria-labelledby="estimator-heading">
+        <div class="wrap grid items-center gap-10 py-14 sm:py-16 lg:grid-cols-12">
+            <div class="lg:col-span-6" data-reveal>
+                <p class="eyebrow">Send a parcel today</p>
+                <h2 id="estimator-heading" class="h-section mt-4">Know the cost before you click &ldquo;buy&rdquo;.</h2>
+                <p class="lead mt-4">Type in the weight of your order and see what it costs to fly it from Miami to your MBE store in Grand Cayman. Then shop with confidence.</p>
+                <ul class="mt-6 space-y-2.5 text-sm">
+                    @foreach ([
+                        'Free U.S. shipping address the moment you register',
+                        'Customs clearance handled for you, invoice uploaded in the app',
+                        'Pick up at Camana Bay or Harbour Walk, or have it delivered',
+                    ] as $point)
+                        <li class="flex items-start gap-2.5"><x-icon name="check" class="mt-0.5 size-[18px] shrink-0 text-brand-600" /> {{ $point }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            <div class="relative order-first -mt-24 lg:order-none lg:col-span-6 lg:-mt-0 lg:-translate-y-24 lg:self-start" data-reveal style="--reveal-delay: 120ms">
+                <div class="card relative !p-0 text-ink shadow-lift" x-data="eboxCalculator(@js($mbe['ebox']))">
+                    <div class="airmail h-1.5"></div>
                     <div class="p-6 sm:p-7">
                         <div class="flex items-center justify-between">
                             <div>
-                                <p class="text-xs font-semibold tracking-[0.16em] text-muted uppercase">E-box estimator</p>
-                                <h2 class="mt-1 font-display text-2xl font-bold">What will shipping cost?</h2>
+                                <p class="text-xs font-bold tracking-[0.14em] text-brand-600 uppercase">E-box estimator</p>
+                                <h2 class="mt-1 font-display text-2xl font-medium">What will shipping cost?</h2>
                             </div>
                             <span class="icon-tile"><x-icon name="calculator" /></span>
                         </div>
@@ -74,10 +86,10 @@
 
                         <div class="mt-5 grid grid-cols-2 gap-3">
                             @foreach ($mbe['ebox']['plans'] as $key => $plan)
-                                <div class="rounded-2xl p-4 {{ $key === 'pro' ? 'bg-ink text-white' : 'bg-paper ring-1 ring-line' }}">
-                                    <p class="text-xs font-semibold {{ $key === 'pro' ? 'text-white/60' : 'text-muted' }}">{{ $plan['name'] }}</p>
-                                    <p class="mt-1 font-display text-2xl font-bold tabular-nums" x-text="chargeable ? money(cost('{{ $key }}')) : 'CI$ –'">CI$ –</p>
-                                    <p class="mt-1 text-[11px] {{ $key === 'pro' ? 'text-white/60' : 'text-muted' }}">{{ $plan['membership'] ? 'CI$'.$plan['membership'].'/yr membership' : 'No membership fee' }}</p>
+                                <div class="rounded-2xl p-4 {{ $key === 'pro' ? 'bg-brand-600 text-white' : 'bg-paper ring-1 ring-line' }}">
+                                    <p class="text-xs font-medium {{ $key === 'pro' ? 'text-white/75' : 'text-muted' }}">{{ $plan['name'] }}</p>
+                                    <p class="mt-1 font-display text-2xl font-medium tabular-nums" x-text="chargeable ? money(cost('{{ $key }}')) : 'CI$ –'">CI$ –</p>
+                                    <p class="mt-1 text-[11px] {{ $key === 'pro' ? 'text-white/75' : 'text-muted' }}">{{ $plan['membership'] ? 'CI$'.$plan['membership'].'/yr membership' : 'No membership fee' }}</p>
                                 </div>
                             @endforeach
                         </div>
@@ -98,11 +110,11 @@
     {{-- Courier partners --}}
     <section class="border-y border-line bg-white" aria-label="Courier partners">
         <div class="wrap flex flex-col items-center gap-x-10 gap-y-4 py-6 md:flex-row">
-            <p class="shrink-0 text-xs font-semibold tracking-[0.16em] text-muted uppercase">Authorised shipping centre</p>
+            <p class="shrink-0 text-xs font-bold tracking-[0.14em] text-brand-600 uppercase">Authorised shipping centre</p>
             <div class="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
                 <div class="flex w-max animate-marquee items-center gap-14 pr-14">
                     @foreach (array_merge(...array_fill(0, 4, $mbe['couriers'])) as $courier)
-                        <span class="font-display text-2xl font-extrabold tracking-tight text-ink/35">{{ $courier }}</span>
+                        <span class="font-display text-2xl font-bold tracking-tight text-ink/35">{{ $courier }}</span>
                     @endforeach
                 </div>
             </div>
@@ -117,24 +129,24 @@
                     <p class="eyebrow">What we do</p>
                     <h2 class="h-section mt-4">One stop for post, parcels and print.</h2>
                 </div>
-                <p class="max-w-sm text-muted">Whether you are a business or an individual, last minute or one-off, we&rsquo;re here to help.</p>
+                <p class="max-w-sm text-muted">Whether you are a business or an individual, last minute or one-off, we&rsquo;re here to help. If it can be sent, we can pack it and send it anywhere in the world.</p>
             </div>
 
             <div class="mt-12 grid gap-5 md:grid-cols-6">
                 {{-- E-box --}}
                 <a href="{{ route('ebox') }}" class="group relative overflow-hidden rounded-3xl bg-ink p-8 text-white md:col-span-4 md:row-span-2" data-reveal>
-                    <div class="grid-ink absolute inset-0 opacity-70"></div>
-                    <div class="absolute -right-24 -bottom-24 size-80 rounded-full bg-brand-600/50 blur-3xl transition duration-500 group-hover:bg-brand-500/60"></div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-ink via-ink to-brand-900"></div>
+                    <div class="airmail absolute inset-x-0 top-0 h-1.5"></div>
                     <div class="relative flex h-full flex-col">
                         <div class="flex items-center justify-between">
                             <span class="grid size-12 place-items-center rounded-2xl bg-brand-600"><x-icon name="plane" /></span>
-                            <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold ring-1 ring-white/20">Most popular</span>
+                            <span class="rounded-sm bg-brand-600 px-3 py-1 text-xs font-bold tracking-wider uppercase">Most popular</span>
                         </div>
                         <h3 class="mt-8 font-display text-3xl font-bold sm:text-4xl">E-box: your own U.S. address</h3>
                         <p class="mt-3 max-w-lg text-white/70">Shop thousands of U.S. online stores and have your orders delivered to your nearest MBE store. Track every package from the Miami warehouse to your hands.</p>
 
                         {{-- Route --}}
-                        <div class="mt-10 flex items-center gap-3 text-xs font-semibold text-white/70">
+                        <div class="mt-10 flex items-center gap-3 text-xs font-medium text-white/70">
                             <span class="rounded-full bg-white/10 px-3 py-1.5 ring-1 ring-white/15">Your order</span>
                             <span class="h-px flex-1 border-t border-dashed border-white/30"></span>
                             <span class="rounded-full bg-white/10 px-3 py-1.5 ring-1 ring-white/15">Miami</span>
@@ -199,7 +211,7 @@
                     <span class="grid size-12 place-items-center rounded-2xl bg-white/15"><x-icon name="camera" /></span>
                     <h3 class="mt-5 font-display text-xl font-bold">Passport photos &amp; more</h3>
                     <p class="mt-2 text-sm text-white/80">Passport and visa photos, Print from Phone, secure shredding and photo booth rental.</p>
-                    <p class="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-semibold">See all services <x-icon name="arrow-right" class="size-4 transition group-hover:translate-x-1" /></p>
+                    <p class="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-medium">See all services <x-icon name="arrow-right" class="size-4 transition group-hover:translate-x-1" /></p>
                 </a>
             </div>
         </div>
@@ -213,11 +225,11 @@
                 <h2 class="h-section mt-4">Whatever your needs, we&rsquo;ll personalise our service.</h2>
             </div>
 
-            <div class="mx-auto mt-10 flex w-fit max-w-full gap-1 overflow-x-auto rounded-full bg-paper p-1.5 ring-1 ring-line" role="tablist" data-reveal>
+            <div class="mx-auto mt-10 flex w-fit max-w-full gap-1 overflow-x-auto rounded-sm bg-paper p-1.5 ring-1 ring-line" role="tablist" data-reveal>
                 @foreach (['new' => 'New to Cayman', 'shopper' => 'Online shoppers', 'business' => 'For business'] as $key => $label)
                     <button type="button" role="tab" @click="tab = '{{ $key }}'" :aria-selected="tab === '{{ $key }}'"
-                        class="rounded-full px-5 py-2.5 text-sm font-semibold whitespace-nowrap transition"
-                        :class="tab === '{{ $key }}' ? 'bg-ink text-white shadow-sm' : 'text-muted hover:text-ink'">{{ $label }}</button>
+                        class="rounded-sm px-5 py-2.5 text-sm font-medium whitespace-nowrap transition"
+                        :class="tab === '{{ $key }}' ? 'bg-brand-600 text-white shadow-sm' : 'text-muted hover:text-ink'">{{ $label }}</button>
                 @endforeach
             </div>
 
@@ -275,7 +287,7 @@
                     <div class="grid gap-4 sm:grid-cols-2 lg:col-span-7">
                         @foreach ($audience['items'] as [$icon, $title, $text, $route])
                             <a href="{{ route($route) }}" class="group flex flex-col rounded-3xl bg-paper p-6 ring-1 ring-line/70 transition hover:bg-white hover:shadow-card">
-                                <span class="grid size-11 place-items-center rounded-xl bg-white text-brand-700 ring-1 ring-line transition group-hover:bg-brand-600 group-hover:text-white group-hover:ring-brand-600"><x-icon :name="$icon" /></span>
+                                <span class="grid size-11 place-items-center rounded-xl bg-white text-brand-600 ring-1 ring-line transition group-hover:bg-brand-600 group-hover:text-white group-hover:ring-brand-600"><x-icon :name="$icon" /></span>
                                 <h4 class="mt-4 font-display text-lg font-bold">{{ $title }}</h4>
                                 <p class="mt-1.5 text-sm text-muted">{{ $text }}</p>
                             </a>
@@ -304,7 +316,7 @@
                         ['Collect', 'We notify you when it is ready. Pick up at your MBE store or have it delivered to your door.'],
                     ] as $i => [$title, $text])
                         <li class="card relative" data-reveal style="--reveal-delay: {{ $i * 70 }}ms">
-                            <span class="font-display text-5xl font-extrabold text-brand-600/15">0{{ $i + 1 }}</span>
+                            <span class="font-display text-5xl font-medium text-brand-600/20">0{{ $i + 1 }}</span>
                             <h3 class="mt-2 font-display text-xl font-bold">{{ $title }}</h3>
                             <p class="mt-2 text-sm text-muted">{{ $text }}</p>
                         </li>
@@ -314,13 +326,13 @@
 
             <dl class="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-3xl bg-line ring-1 ring-line lg:grid-cols-4" data-reveal>
                 @foreach ([
-                    [1550, '+', 'MBE stores worldwide'],
+                    [1720, '+', 'MBE centres worldwide'],
+                    [45, '+', 'countries across 4 continents'],
                     [2, '', 'stores in Grand Cayman'],
                     [10, '+', 'years serving Cayman'],
-                    [24, 'hr', 'mailbox access at Camana Bay'],
                 ] as [$number, $suffix, $label])
                     <div class="bg-white p-6 sm:p-8">
-                        <dd class="font-display text-4xl font-extrabold tracking-tight sm:text-5xl"><span x-data="countUp({{ $number }})" x-text="value.toLocaleString()">{{ number_format($number) }}</span><span class="text-brand-600">{{ $suffix }}</span></dd>
+                        <dd class="font-display text-4xl font-medium text-brand-600 sm:text-5xl"><span x-data="countUp({{ $number }})" x-text="value.toLocaleString()">{{ number_format($number) }}</span><span>{{ $suffix }}</span></dd>
                         <dt class="mt-2 text-sm text-muted">{{ $label }}</dt>
                     </div>
                 @endforeach
@@ -362,12 +374,11 @@
 
     {{-- Ocean band --}}
     <section class="relative overflow-hidden bg-ink text-white">
-        <div class="grid-ink absolute inset-0 opacity-60"></div>
-        <div class="absolute -bottom-40 -left-32 size-[30rem] rounded-full bg-brand-600/30 blur-3xl"></div>
+        <div class="airmail absolute inset-x-0 top-0 h-1.5"></div>
         <div class="wrap section relative grid items-center gap-12 lg:grid-cols-2">
             <div data-reveal>
-                <p class="eyebrow !text-brand-300">Ocean Ship</p>
-                <h2 class="h-section mt-4">Big purchase? Send it by sea.</h2>
+                <p class="eyebrow !text-brand-400">Ocean Ship</p>
+                <h2 class="h-section mt-4 !text-white">Big purchase? Send it by sea.</h2>
                 <p class="mt-4 max-w-lg text-lg text-white/70">Our ocean freight service is a cost-effective choice for large and over-sized cargo, with free 30 day consolidation, insurance and Customs clearance.</p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="{{ route('ocean') }}#calculator" class="btn btn-primary">Estimate ocean freight</a>
@@ -377,14 +388,14 @@
             <div class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10 backdrop-blur sm:p-8" data-reveal style="--reveal-delay: 120ms">
                 @if ($nextSailing)
                     <div class="flex items-center justify-between">
-                        <p class="text-xs font-semibold tracking-[0.16em] text-white/50 uppercase">{{ $nextSailing->hasSailed() ? 'Latest sailing' : 'Next sailing from Miami' }}</p>
+                        <p class="text-xs font-medium tracking-[0.16em] text-white/50 uppercase">{{ $nextSailing->hasSailed() ? 'Latest sailing' : 'Next sailing from Miami' }}</p>
                         <x-icon name="ship" class="size-5 text-brand-400" />
                     </div>
-                    <p class="mt-3 font-display text-4xl font-extrabold sm:text-5xl">{{ $nextSailing->sailing_date->format('D j M') }}</p>
+                    <p class="mt-3 font-display text-4xl font-bold sm:text-5xl">{{ $nextSailing->sailing_date->format('D j M') }}</p>
                     <dl class="mt-8 grid grid-cols-3 gap-4 border-t border-white/10 pt-6 text-sm">
-                        <div><dt class="text-white/50">Instruct to ship by</dt><dd class="mt-1 font-semibold">{{ $nextSailing->cutoff_date->format('D j M') }}</dd></div>
-                        <div><dt class="text-white/50">Sails</dt><dd class="mt-1 font-semibold">{{ $nextSailing->sailing_date->format('D j M') }}</dd></div>
-                        <div><dt class="text-white/50">In hand</dt><dd class="mt-1 font-semibold">{{ $nextSailing->in_hand_date->format('D j M') }}</dd></div>
+                        <div><dt class="text-white/50">Instruct to ship by</dt><dd class="mt-1 font-medium">{{ $nextSailing->cutoff_date->format('D j M') }}</dd></div>
+                        <div><dt class="text-white/50">Sails</dt><dd class="mt-1 font-medium">{{ $nextSailing->sailing_date->format('D j M') }}</dd></div>
+                        <div><dt class="text-white/50">In hand</dt><dd class="mt-1 font-medium">{{ $nextSailing->in_hand_date->format('D j M') }}</dd></div>
                     </dl>
                 @else
                     <p class="font-display text-2xl font-bold">Sailing dates coming soon</p>
@@ -392,6 +403,40 @@
                 @endif
                 <p class="mt-6 text-sm text-white/60">Up to {{ $mbe['ocean']['flat_cf'] }} cubic feet for a flat <strong class="text-white">CI${{ $mbe['ocean']['flat_rate'] }}</strong>, including freight, import documentation and Customs clearance service.</p>
             </div>
+        </div>
+    </section>
+
+    {{-- Customer stories --}}
+    <section class="section bg-white" aria-labelledby="stories-heading">
+        <div class="wrap">
+            <div class="mx-auto max-w-2xl text-center" data-reveal>
+                <p class="eyebrow justify-center">#PeoplePossible</p>
+                <h2 id="stories-heading" class="h-section mt-4">Happy customers, from West Bay to East End.</h2>
+                <p class="lead mt-4">Every parcel, mailbox and print job is handled by people who live here too. Here is what our neighbours say.</p>
+            </div>
+            <div class="mt-12 grid gap-6 md:grid-cols-3">
+                @foreach ([
+                    ['Tamara Ebanks', 'West Bay · E-box customer', 'I order everything for the kids from the States now. The app tells me the minute it lands in Miami, and the Camana Bay team has it ready for me on my way home from work. No stress, no surprises at Customs.', 'TE'],
+                    ['Dwayne Bodden', 'Savannah · Ocean Ship customer', 'We furnished our whole new place in Savannah through Ocean Ship. One flat rate for the container space, they cleared it all, and it arrived on the sailing date they gave us. Couldn\'t ask for better.', 'DB'],
+                    ['Priya & Marcus Scott', 'George Town · Small business mailbox', 'Our little company needed a proper street address and someone to sign for deliveries. The Harbour Walk crew know us by name, print our flyers and even remind us when a package is waiting.', 'PS'],
+                ] as $i => [$name, $meta, $quote, $initials])
+                    <figure class="card flex flex-col" data-reveal style="--reveal-delay: {{ $i * 80 }}ms">
+                        <x-icon name="quote" class="size-8 text-brand-600" />
+                        <blockquote class="mt-4 flex-1 text-[15px] leading-relaxed text-ink/85">{{ $quote }}</blockquote>
+                        <figcaption class="mt-6 flex items-center gap-3 border-t border-line pt-5">
+                            <span class="grid size-11 shrink-0 place-items-center rounded-full bg-brand-600 font-display text-sm font-medium text-white">{{ $initials }}</span>
+                            <span>
+                                <span class="block font-display font-medium">{{ $name }}</span>
+                                <span class="block text-xs text-muted">{{ $meta }}</span>
+                            </span>
+                            <span class="ml-auto flex gap-0.5 text-brand-600" aria-label="Five star rating">
+                                @for ($star = 0; $star < 5; $star++)<x-icon name="star" class="size-3.5 fill-current" />@endfor
+                            </span>
+                        </figcaption>
+                    </figure>
+                @endforeach
+            </div>
+            <p class="mt-6 text-center text-xs text-muted">Sample reviews shown for the concept site. These will be replaced with Mail Boxes Etc. Cayman&rsquo;s own Google reviews before launch.</p>
         </div>
     </section>
 
@@ -418,7 +463,7 @@
         <div class="wrap">
             <div class="max-w-2xl" data-reveal>
                 <p class="eyebrow">Visit us</p>
-                <h2 class="h-section mt-4">Two stores, one friendly team.</h2>
+                <h2 class="h-section mt-4">Two stores, one friendly island team.</h2>
             </div>
             <div class="mt-10 grid gap-6 lg:grid-cols-2">
                 @foreach ($mbe['locations'] as $location)

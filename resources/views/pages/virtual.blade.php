@@ -46,9 +46,9 @@
                                 <x-icon name="mail" class="size-8 text-muted/60" />
                             </div>
                             <div class="min-w-0 flex-1">
-                                <p class="text-sm font-semibold">Envelope received</p>
+                                <p class="text-sm font-medium">Envelope received</p>
                                 <p class="text-xs text-muted">Scanned at Camana Bay</p>
-                                <p class="mt-3 text-xs font-semibold" :class="action ? 'text-emerald-700' : 'text-muted'" x-text="action ? 'Request sent: ' + action : 'Choose an action below'">Choose an action below</p>
+                                <p class="mt-3 text-xs font-medium" :class="action ? 'text-emerald-700' : 'text-muted'" x-text="action ? 'Request sent: ' + action : 'Choose an action below'">Choose an action below</p>
                             </div>
                         </div>
                         <div class="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-5">
@@ -60,7 +60,7 @@
                                 ['recycle', 'Recycle'],
                             ] as [$icon, $label])
                                 <button type="button" @click="action = '{{ $label }}'"
-                                    class="flex flex-col items-center gap-2 rounded-xl p-3 text-xs font-semibold ring-1 transition"
+                                    class="flex flex-col items-center gap-2 rounded-xl p-3 text-xs font-medium ring-1 transition"
                                     :class="action === '{{ $label }}' ? 'bg-brand-600 text-white ring-brand-600' : 'bg-white text-ink ring-line hover:ring-ink/40'">
                                     <x-icon :name="$icon" /> {{ $label }}
                                 </button>
@@ -110,7 +110,7 @@
                     ['Manage your mail', 'Download the Anytime Mailbox Renter app to your mobile device or sign in from the webpage. When mail arrives for you, it will automatically appear in your inbox.'],
                 ] as $i => [$title, $text])
                     <li class="card" data-reveal style="--reveal-delay: {{ $i * 90 }}ms">
-                        <span class="inline-flex rounded-full bg-ink px-3 py-1 text-xs font-semibold text-white">Step {{ $i + 1 }}</span>
+                        <span class="inline-flex rounded-full bg-ink px-3 py-1 text-xs font-medium text-white">Step {{ $i + 1 }}</span>
                         <h3 class="mt-4 font-display text-xl font-bold">{{ $title }}</h3>
                         <p class="mt-2 text-sm text-muted">{{ $text }}</p>
                     </li>

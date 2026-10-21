@@ -28,7 +28,7 @@
                         <li>
                             <a href="{{ $result['url'] }}" class="group flex items-start justify-between gap-6 rounded-2xl bg-white p-5 ring-1 ring-line/70 transition hover:shadow-card">
                                 <div>
-                                    <span class="rounded-full bg-brand-50 px-2.5 py-1 text-xs font-semibold text-brand-700">{{ $result['type'] }}</span>
+                                    <span class="rounded-full bg-brand-50 px-2.5 py-1 text-xs font-medium text-brand-700">{{ $result['type'] }}</span>
                                     <h2 class="mt-2 font-display text-lg font-bold group-hover:text-brand-700">{{ $result['title'] }}</h2>
                                     <p class="mt-1 text-sm text-muted">{{ $result['text'] }}</p>
                                 </div>

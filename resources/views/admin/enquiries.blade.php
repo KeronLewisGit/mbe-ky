@@ -36,9 +36,9 @@
             <tbody>
                 @forelse ($enquiries as $enquiry)
                     <tr class="group cursor-pointer transition hover:bg-paper" onclick="window.location='{{ route('admin.enquiry', $enquiry) }}'">
-                        <td><a href="{{ route('admin.enquiry', $enquiry) }}" class="font-mono text-xs font-semibold group-hover:text-brand-700">{{ $enquiry->reference }}</a></td>
+                        <td><a href="{{ route('admin.enquiry', $enquiry) }}" class="font-mono text-xs font-medium group-hover:text-brand-700">{{ $enquiry->reference }}</a></td>
                         <td>
-                            <p class="font-semibold">{{ $enquiry->name }} @if ($enquiry->is_sample)<span class="ml-1 rounded bg-paper-deep px-1.5 py-0.5 text-[10px] font-semibold text-muted uppercase">Sample</span>@endif</p>
+                            <p class="font-medium">{{ $enquiry->name }} @if ($enquiry->is_sample)<span class="ml-1 rounded bg-paper-deep px-1.5 py-0.5 text-[10px] font-medium text-muted uppercase">Sample</span>@endif</p>
                             <p class="text-xs text-muted">{{ $enquiry->email }}</p>
                         </td>
                         <td class="whitespace-nowrap"><span class="inline-flex items-center gap-2"><x-icon :name="$enquiry->typeIcon()" class="size-4 text-muted" /> {{ $enquiry->typeLabel() }}</span></td>

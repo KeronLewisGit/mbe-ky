@@ -41,13 +41,13 @@
                                             <span class="block text-xs font-normal text-muted">Cut-off passed</span>
                                         @endif
                                     </td>
-                                    <td class="font-semibold">{{ $sailing->sailing_date->format('D j M Y') }}</td>
+                                    <td class="font-medium">{{ $sailing->sailing_date->format('D j M Y') }}</td>
                                     <td>{{ $sailing->in_hand_date->format('D j M Y') }}</td>
                                     <td class="text-right">
                                         @if ($next?->is($sailing))
-                                            <span class="rounded-full bg-brand-600 px-2.5 py-1 text-xs font-semibold text-white">Next sailing</span>
+                                            <span class="rounded-full bg-brand-600 px-2.5 py-1 text-xs font-medium text-white">Next sailing</span>
                                         @elseif ($sailing->hasSailed())
-                                            <span class="rounded-full bg-paper px-2.5 py-1 text-xs font-semibold text-muted ring-1 ring-line">At sea</span>
+                                            <span class="rounded-full bg-paper px-2.5 py-1 text-xs font-medium text-muted ring-1 ring-line">At sea</span>
                                         @endif
                                     </td>
                                 </tr>
@@ -78,9 +78,9 @@
                     <table class="table-clean">
                         <thead><tr class="bg-paper"><th>Cubic feet</th><th class="text-right">Rate (CI$)</th></tr></thead>
                         <tbody>
-                            <tr><td>Up to {{ $ocean['flat_cf'] }} c.f.</td><td class="text-right font-semibold">${{ $ocean['flat_rate'] }} flat rate</td></tr>
-                            <tr><td>Each additional c.f. between {{ $ocean['flat_cf'] }} and {{ $ocean['mid_cf'] }} c.f.</td><td class="text-right font-semibold">${{ number_format($ocean['mid_rate'], 2) }}/c.f.</td></tr>
-                            <tr><td>Each additional c.f. over {{ $ocean['mid_cf'] }} c.f.</td><td class="text-right font-semibold">${{ number_format($ocean['high_rate'], 2) }}/c.f.</td></tr>
+                            <tr><td>Up to {{ $ocean['flat_cf'] }} c.f.</td><td class="text-right font-medium">${{ $ocean['flat_rate'] }} flat rate</td></tr>
+                            <tr><td>Each additional c.f. between {{ $ocean['flat_cf'] }} and {{ $ocean['mid_cf'] }} c.f.</td><td class="text-right font-medium">${{ number_format($ocean['mid_rate'], 2) }}/c.f.</td></tr>
+                            <tr><td>Each additional c.f. over {{ $ocean['mid_cf'] }} c.f.</td><td class="text-right font-medium">${{ number_format($ocean['high_rate'], 2) }}/c.f.</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -126,7 +126,7 @@
                             </div>
                             <div class="text-right">
                                 <p class="text-xs text-white/50">Estimated freight</p>
-                                <p class="font-display text-4xl font-extrabold tabular-nums" x-text="total ? money(cost) : 'CI$ –'">CI$ –</p>
+                                <p class="font-display text-4xl font-bold tabular-nums" x-text="total ? money(cost) : 'CI$ –'">CI$ –</p>
                             </div>
                         </div>
                         <dl class="mt-4 space-y-1.5 border-t border-white/10 pt-4 text-sm text-white/70" x-show="breakdown.length" x-cloak>
@@ -166,7 +166,7 @@
             </div>
             <aside class="space-y-5 lg:col-span-5" data-reveal style="--reveal-delay: 120ms">
                 <div class="rounded-3xl bg-ink p-6 text-white sm:p-8" x-data="{ copied: false }">
-                    <p class="text-xs font-semibold tracking-[0.16em] text-brand-300 uppercase">Ocean shipping address</p>
+                    <p class="text-xs font-medium tracking-[0.16em] text-brand-300 uppercase">Ocean shipping address</p>
                     <address class="mt-4 font-mono text-[15px] leading-relaxed not-italic" x-ref="address">@foreach ($ocean['address'] as $line){{ $line }}<br>@endforeach</address>
                     <p class="mt-2 text-xs text-white/50">(Miami or Doral are accepted)</p>
                     <button type="button" class="btn btn-onDark mt-5 !py-2.5" @click="navigator.clipboard?.writeText($refs.address.innerText.trim()); copied = true; setTimeout(() => copied = false, 2000)">

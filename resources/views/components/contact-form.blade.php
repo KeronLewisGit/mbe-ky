@@ -25,6 +25,6 @@
         <button type="submit" class="btn btn-primary">
             Send message <x-icon name="arrow-right" class="size-4" />
         </button>
-        <p class="text-xs text-muted">Or call <a class="font-semibold text-ink" href="tel:{{ config('mbe.phone_href') }}">{{ config('mbe.phone') }}</a></p>
+        <p class="text-xs text-muted">Or call <a class="font-medium text-ink" href="tel:{{ config('mbe.phone_href') }}">{{ config('mbe.phone') }}</a></p>
     </div>
 </form>

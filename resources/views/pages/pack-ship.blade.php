@@ -12,10 +12,10 @@
     {{-- Couriers --}}
     <section class="border-b border-line bg-white">
         <div class="wrap flex flex-wrap items-center justify-between gap-x-10 gap-y-4 py-7">
-            <p class="text-xs font-semibold tracking-[0.16em] text-muted uppercase">Choose your courier</p>
+            <p class="text-xs font-medium tracking-[0.16em] text-muted uppercase">Choose your courier</p>
             <div class="flex flex-wrap items-center gap-x-10 gap-y-2">
                 @foreach ($mbe['couriers'] as $courier)
-                    <span class="font-display text-2xl font-extrabold tracking-tight text-ink/40">{{ $courier }}</span>
+                    <span class="font-display text-2xl font-bold tracking-tight text-ink/40">{{ $courier }}</span>
                 @endforeach
             </div>
         </div>

@@ -46,7 +46,7 @@
                     ['Print & finish', 'Once approved, we print and finish in store, ready for collection.'],
                 ] as $i => [$title, $text])
                     <li class="card bg-paper" data-reveal style="--reveal-delay: {{ $i * 90 }}ms">
-                        <span class="font-display text-5xl font-extrabold text-brand-600/15">0{{ $i + 1 }}</span>
+                        <span class="font-display text-5xl font-bold text-brand-600/15">0{{ $i + 1 }}</span>
                         <h3 class="mt-2 font-display text-xl font-bold">{{ $title }}</h3>
                         <p class="mt-2 text-sm text-muted">{{ $text }}</p>
                     </li>

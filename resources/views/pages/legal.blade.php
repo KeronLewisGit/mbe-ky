@@ -7,7 +7,7 @@
                 <nav class="top-28 space-y-6 lg:sticky" aria-label="Guides and policies">
                     @foreach (collect(config('mbe.legal'))->groupBy('group', preserveKeys: true) as $group => $docs)
                         <div>
-                            <p class="mb-2 text-xs font-semibold tracking-[0.16em] text-muted uppercase">{{ $group }}</p>
+                            <p class="mb-2 text-xs font-medium tracking-[0.16em] text-muted uppercase">{{ $group }}</p>
                             <ul class="space-y-1">
                                 @foreach ($docs as $docSlug => $doc)
                                     <li>

@@ -1,12 +1,12 @@
 <x-admin title="Announcements">
     <div class="mb-6 overflow-hidden rounded-2xl ring-1 ring-line">
-        <p class="bg-white px-4 py-2 text-xs font-semibold tracking-[0.16em] text-muted uppercase">Showing on the website now</p>
+        <p class="bg-white px-4 py-2 text-xs font-medium tracking-[0.16em] text-muted uppercase">Showing on the website now</p>
         @if ($live)
             <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 bg-brand-600 px-4 py-2.5 text-center text-sm text-white">
                 <x-icon name="megaphone" class="size-4" />
                 <p class="font-medium">{{ $live->message }}</p>
                 @if ($live->link_url)
-                    <span class="font-semibold underline underline-offset-4">{{ $live->link_text }}</span>
+                    <span class="font-medium underline underline-offset-4">{{ $live->link_text }}</span>
                 @endif
             </div>
         @else
@@ -24,20 +24,20 @@
                 @forelse ($announcements as $announcement)
                     <li class="flex flex-wrap items-center gap-4 px-6 py-4">
                         <div class="min-w-0 flex-1">
-                            <p class="text-sm font-semibold">{{ $announcement->message }}</p>
+                            <p class="text-sm font-medium">{{ $announcement->message }}</p>
                             <p class="mt-0.5 text-xs text-muted">
                                 {{ $announcement->window() }}
                                 @if ($announcement->link_url) &middot; {{ $announcement->link_text }} &rarr; {{ $announcement->link_url }} @endif
                             </p>
                         </div>
                         @if ($live?->is($announcement))
-                            <span class="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-800">Showing now</span>
+                            <span class="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-800">Showing now</span>
                         @elseif (! $announcement->is_active)
-                            <span class="rounded-full bg-paper px-2.5 py-1 text-xs font-semibold text-muted ring-1 ring-line">Off</span>
+                            <span class="rounded-full bg-paper px-2.5 py-1 text-xs font-medium text-muted ring-1 ring-line">Off</span>
                         @elseif ($announcement->ends_on?->lt(today()))
-                            <span class="rounded-full bg-paper px-2.5 py-1 text-xs font-semibold text-muted ring-1 ring-line">Ended</span>
+                            <span class="rounded-full bg-paper px-2.5 py-1 text-xs font-medium text-muted ring-1 ring-line">Ended</span>
                         @else
-                            <span class="rounded-full bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-800">Queued</span>
+                            <span class="rounded-full bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-800">Queued</span>
                         @endif
                         <form method="POST" action="{{ route('admin.announcements.toggle', $announcement) }}">
                             @csrf

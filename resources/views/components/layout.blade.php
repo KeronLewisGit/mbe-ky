@@ -55,7 +55,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="flex min-h-screen flex-col" x-data="{ menu: false, search: false }" :class="menu && 'overflow-hidden'" @keydown.escape.window="menu = false; search = false">
-    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold">Skip to content</a>
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium">Skip to content</a>
 
     @if ($announcement)
         <div class="bg-brand-600 text-white">
@@ -63,7 +63,7 @@
                 <x-icon name="megaphone" class="hidden size-4 shrink-0 sm:block" />
                 <p class="font-medium">{{ $announcement->message }}</p>
                 @if ($announcement->link_url)
-                    <a href="{{ $announcement->link_url }}" class="inline-flex items-center gap-1 font-semibold underline decoration-white/50 underline-offset-4 hover:decoration-white">{{ $announcement->link_text }} <x-icon name="arrow-right" class="size-3.5" /></a>
+                    <a href="{{ $announcement->link_url }}" class="inline-flex items-center gap-1 font-medium underline decoration-white/50 underline-offset-4 hover:decoration-white">{{ $announcement->link_text }} <x-icon name="arrow-right" class="size-3.5" /></a>
                 @endif
             </div>
         </div>
@@ -79,22 +79,30 @@
                     @endif
                     <span class="relative inline-flex size-2 rounded-full {{ $status['open'] ? 'bg-emerald-400' : 'bg-white/40' }}"></span>
                 </span>
-                <span class="truncate"><span class="font-semibold text-white">Camana Bay</span> &middot; {{ $status['text'] }}</span>
+                <span class="truncate"><span class="font-medium text-white">Camana Bay</span> &middot; {{ $status['text'] }}</span>
             </a>
             <div class="flex shrink-0 items-center gap-5">
-                <a href="tel:{{ $mbe['phone_href'] }}" class="hidden items-center gap-1.5 font-semibold transition hover:text-brand-300 sm:flex">
+                <a href="tel:{{ $mbe['phone_href'] }}" class="hidden items-center gap-1.5 font-medium transition hover:text-brand-300 sm:flex">
                     <x-icon name="phone" class="size-3.5" /> {{ $mbe['phone'] }}
                 </a>
-                <a href="{{ $mbe['links']['virtual_login'] }}" target="_blank" rel="noopener" class="hidden text-white/80 transition hover:text-white md:inline">Virtual Mailbox sign in</a>
-                <a href="{{ $mbe['links']['ebox_login'] }}" target="_blank" rel="noopener" class="flex items-center gap-1 font-semibold transition hover:text-brand-300">
-                    E-box log in <x-icon name="arrow-up-right" class="size-3.5" />
+                <a href="{{ $mbe['links']['ebox_login'] }}" target="_blank" rel="noopener" class="hidden items-center gap-1.5 text-white/80 transition hover:text-white md:flex">
+                    <x-icon name="package-search" class="size-3.5" /> Track my shipment
+                </a>
+                <a href="{{ route('mailboxes') }}" class="hidden items-center gap-1.5 text-white/80 transition hover:text-white lg:flex">
+                    <x-icon name="mailbox" class="size-3.5" /> Rent a mailbox
+                </a>
+                <a href="{{ $mbe['links']['virtual_login'] }}" target="_blank" rel="noopener" class="hidden items-center gap-1.5 text-white/80 transition hover:text-white lg:flex">
+                    <x-icon name="user" class="size-3.5" /> Sign in
+                </a>
+                <a href="{{ route('contact') }}#contact" class="-mr-2 flex h-10 items-center gap-1.5 bg-brand-600 px-3.5 text-[11px] font-bold tracking-wider text-white uppercase transition hover:bg-brand-700 sm:-mr-0">
+                    <x-icon name="message-square" class="size-3.5" /> Ask for a quote
                 </a>
             </div>
         </div>
     </div>
 
     {{-- Header --}}
-    <header class="sticky top-0 z-40 border-b border-line/80 bg-paper/85 backdrop-blur-lg">
+    <header class="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur-lg">
         <div class="wrap flex h-[4.5rem] items-center justify-between gap-6">
             <a href="{{ route('home') }}" class="shrink-0" aria-label="Mail Boxes Etc. home">
                 <img src="{{ asset('images/logo.png') }}" alt="Mail Boxes Etc." width="854" height="237" class="h-9 w-auto sm:h-10">
@@ -104,7 +112,7 @@
                 @foreach ($nav as $label => $group)
                     <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" @focusout="if (! $el.contains($event.relatedTarget)) open = false">
                         <a href="{{ route($group['route']) }}" @focus="open = true"
-                            class="flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium transition hover:bg-ink/5 {{ in_array($current, $group['active']) ? 'text-brand-700' : 'text-ink' }}"
+                            class="flex items-center gap-1 rounded-sm px-3.5 py-2 text-[13px] font-medium tracking-wide uppercase transition hover:text-brand-600 {{ in_array($current, $group['active']) ? 'text-brand-600' : 'text-ink' }}"
                             :aria-expanded="open">
                             {{ $label }}
                             <x-icon name="chevron-down" class="size-3.5 opacity-50 transition" ::class="open && 'rotate-180'" />
@@ -113,11 +121,11 @@
                             <div class="rounded-2xl bg-white p-2 shadow-lift ring-1 ring-line">
                                 @foreach ($group['items'] as $item)
                                     <a href="{{ route($item[0]).($item[4] ?? '') }}" class="group flex items-center gap-3 rounded-xl p-2.5 transition hover:bg-paper">
-                                        <span class="grid size-10 shrink-0 place-items-center rounded-xl bg-paper text-ink transition group-hover:bg-brand-600 group-hover:text-white">
+                                        <span class="grid size-10 shrink-0 place-items-center rounded-sm bg-paper text-brand-600 transition group-hover:bg-brand-600 group-hover:text-white">
                                             <x-icon :name="$item[3]" class="size-[18px]" />
                                         </span>
                                         <span>
-                                            <span class="block text-sm font-semibold">{{ $item[1] }}</span>
+                                            <span class="block text-sm font-medium">{{ $item[1] }}</span>
                                             <span class="block text-xs text-muted">{{ $item[2] }}</span>
                                         </span>
                                     </a>
@@ -126,16 +134,16 @@
                         </div>
                     </div>
                 @endforeach
-                <a href="{{ route('blog') }}" class="rounded-full px-3.5 py-2 text-sm font-medium transition hover:bg-ink/5 {{ str_starts_with((string) $current, 'blog') ? 'text-brand-700' : '' }}">News</a>
-                <a href="{{ route('contact') }}" class="rounded-full px-3.5 py-2 text-sm font-medium transition hover:bg-ink/5 {{ $current === 'contact' ? 'text-brand-700' : '' }}">Contact</a>
+                <a href="{{ route('blog') }}" class="rounded-sm px-3.5 py-2 text-[13px] font-medium tracking-wide uppercase transition hover:text-brand-600 {{ str_starts_with((string) $current, 'blog') ? 'text-brand-600' : '' }}">News</a>
+                <a href="{{ route('contact') }}" class="rounded-sm px-3.5 py-2 text-[13px] font-medium tracking-wide uppercase transition hover:text-brand-600 {{ $current === 'contact' ? 'text-brand-600' : '' }}">Contact</a>
             </nav>
 
             <div class="flex items-center gap-2">
-                <button type="button" class="grid size-10 place-items-center rounded-full transition hover:bg-ink/5" @click="search = true; $nextTick(() => $refs.search.focus())" aria-label="Search">
+                <button type="button" class="grid size-10 place-items-center rounded-sm transition hover:bg-ink/5" @click="search = true; $nextTick(() => $refs.search.focus())" aria-label="Search">
                     <x-icon name="search" class="size-[18px]" />
                 </button>
                 <a href="{{ $mbe['links']['ebox_signup'] }}" target="_blank" rel="noopener" class="btn btn-primary hidden !py-2.5 sm:inline-flex">Get a U.S. address</a>
-                <button type="button" class="grid size-10 place-items-center rounded-full bg-ink text-white lg:hidden" @click="menu = true" aria-label="Open menu">
+                <button type="button" class="grid size-10 place-items-center rounded-sm bg-ink text-white lg:hidden" @click="menu = true" aria-label="Open menu">
                     <x-icon name="menu" class="size-[18px]" />
                 </button>
             </div>
@@ -158,19 +166,19 @@
             class="absolute inset-y-0 right-0 flex w-full max-w-sm flex-col overflow-y-auto bg-paper shadow-lift">
             <div class="flex h-[4.5rem] shrink-0 items-center justify-between border-b border-line px-5">
                 <img src="{{ asset('images/logo.png') }}" alt="Mail Boxes Etc." class="h-8 w-auto">
-                <button type="button" class="grid size-10 place-items-center rounded-full bg-ink text-white" @click="menu = false" aria-label="Close menu">
+                <button type="button" class="grid size-10 place-items-center rounded-sm bg-ink text-white" @click="menu = false" aria-label="Close menu">
                     <x-icon name="x" class="size-[18px]" />
                 </button>
             </div>
             <div class="flex-1 space-y-6 px-5 py-6">
                 @foreach ($nav as $label => $group)
                     <div>
-                        <p class="mb-2 text-xs font-semibold tracking-[0.16em] text-muted uppercase">{{ $label }}</p>
+                        <p class="mb-2 text-xs font-bold tracking-[0.14em] text-brand-600 uppercase">{{ $label }}</p>
                         <div class="space-y-1">
                             @foreach ($group['items'] as $item)
                                 <a href="{{ route($item[0]).($item[4] ?? '') }}" @click="menu = false" class="flex items-center gap-3 rounded-xl bg-white p-3 ring-1 ring-line/70">
-                                    <x-icon :name="$item[3]" class="size-5 text-brand-700" />
-                                    <span class="text-sm font-semibold">{{ $item[1] }}</span>
+                                    <x-icon :name="$item[3]" class="size-5 text-brand-600" />
+                                    <span class="text-sm font-medium">{{ $item[1] }}</span>
                                 </a>
                             @endforeach
                         </div>
@@ -200,9 +208,9 @@
                 <div class="lg:col-span-4">
                     <img src="{{ asset('images/logo.png') }}" alt="Mail Boxes Etc." class="h-10 w-auto invert">
                     <p class="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
-                        Worldwide parcel delivery, courier and postal services, printing and binding, mailboxes and a U.S. address for online shopping. Proudly part of the global Mail Boxes Etc. family.
+                        Your local post, parcel and print centre in Grand Cayman. Worldwide shipping, mailboxes, a U.S. address for online shopping, and printing, backed by the Mail Boxes Etc. network of more than 1,700 centres in over 45 countries.
                     </p>
-                    <p class="mt-4 font-display text-lg font-bold text-brand-400">{{ $mbe['tagline'] }}</p>
+                    <p class="mt-4 font-display text-lg font-medium text-brand-400">{{ $mbe['tagline'] }}</p>
                     <div class="mt-6 flex flex-wrap gap-2">
                         <a href="tel:{{ $mbe['phone_href'] }}" class="btn btn-onDark !py-2.5"><x-icon name="phone" class="size-4" /> {{ $mbe['phone'] }}</a>
                         <a href="mailto:{{ $mbe['emails']['general'] }}" class="btn btn-onDark !py-2.5"><x-icon name="mail" class="size-4" /> {{ $mbe['emails']['general'] }}</a>
@@ -238,7 +246,7 @@
                         ],
                     ] as $heading => $links)
                         <div>
-                            <h3 class="font-sans text-xs font-semibold tracking-[0.16em] text-white/40 uppercase">{{ $heading }}</h3>
+                            <h3 class="font-sans text-xs font-bold tracking-[0.14em] text-brand-400 uppercase">{{ $heading }}</h3>
                             <ul class="mt-4 space-y-2.5 text-sm">
                                 @foreach ($links as [$text, $url])
                                     <li><a href="{{ $url }}" class="text-white/75 transition hover:text-white">{{ $text }}</a></li>
@@ -253,9 +261,9 @@
                 @foreach ($mbe['locations'] as $location)
                     <div class="flex flex-wrap items-start justify-between gap-4 rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
                         <div>
-                            <p class="font-display text-lg font-bold">{{ $location['name'] }}</p>
+                            <p class="font-display text-lg font-medium">{{ $location['name'] }}</p>
                             <p class="mt-1 text-sm text-white/60">{{ $location['address'] }}</p>
-                            <a href="{{ $location['directions'] }}" target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-brand-300 hover:text-brand-200">Get directions <x-icon name="arrow-up-right" class="size-3.5" /></a>
+                            <a href="{{ $location['directions'] }}" target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-brand-300 hover:text-brand-200">Get directions <x-icon name="arrow-up-right" class="size-3.5" /></a>
                         </div>
                         <dl class="text-xs text-white/60">
                             @foreach ($location['hours'] as [$days, $hours])
@@ -266,8 +274,11 @@
                 @endforeach
             </div>
 
-            <div class="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
-                <p>&copy; {{ date('Y') }} Mail Boxes Etc. Participating stores only. Services vary by location.</p>
+            <div class="mt-10 space-y-4 border-t border-white/10 pt-6 text-xs text-white/45">
+                <p class="max-w-4xl leading-relaxed">Mail Boxes Etc. Cayman Islands is an independently owned and operated franchise of the Mail Boxes Etc. network. Mail Boxes Etc. and MBE are registered trademarks used with permission of Fortidia, a registered trademark of MBE Worldwide S.p.A. Services vary by location.</p>
+            </div>
+            <div class="mt-4 flex flex-col gap-3 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
+                <p>&copy; {{ date('Y') }} Mail Boxes Etc. Cayman Islands. Participating stores only.</p>
                 <p class="flex flex-wrap gap-x-5 gap-y-1">
                     <a href="{{ $mbe['links']['mbe_global'] }}" target="_blank" rel="noopener" class="hover:text-white">MBE Global</a>
                     <a href="{{ $mbe['links']['facebook'] }}" target="_blank" rel="noopener" class="hover:text-white">Facebook</a>
@@ -285,7 +296,7 @@
             init() { try { this.show = ! localStorage.getItem('mbe-cookies') } catch (e) { this.show = true } },
             accept() { this.show = false; try { localStorage.setItem('mbe-cookies', '1') } catch (e) {} },
         }"
-        class="fixed inset-x-4 bottom-4 z-40 mx-auto flex max-w-3xl flex-col gap-4 rounded-2xl bg-white p-5 shadow-lift ring-1 ring-line sm:flex-row sm:items-center">
+        class="fixed inset-x-4 bottom-4 z-40 mx-auto flex max-w-3xl flex-col gap-4 rounded-sm bg-white p-5 shadow-lift ring-1 ring-line sm:flex-row sm:items-center">
         <p class="text-sm text-muted">We use cookies to provide a more efficient and personalised service. By clicking “I accept” you agree to our use of cookies and <a href="{{ route('legal', 'virtual-mailbox-privacy') }}" class="link">privacy policy</a>.</p>
         <button type="button" class="btn btn-dark shrink-0" @click="accept()">I accept</button>
     </div>

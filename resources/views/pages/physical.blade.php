@@ -55,9 +55,9 @@
             <div class="mt-12 grid gap-6 lg:grid-cols-3">
                 @foreach ($mailbox['plans'] as $key => $plan)
                     <article class="card flex flex-col {{ $key === 'small-business' ? '!bg-ink text-white !ring-ink shadow-lift' : '' }}" data-reveal style="--reveal-delay: {{ $loop->index * 90 }}ms">
-                        <p class="text-sm font-semibold {{ $key === 'small-business' ? 'text-brand-300' : 'text-brand-700' }}">{{ $plan['for'] }}</p>
+                        <p class="text-sm font-medium {{ $key === 'small-business' ? 'text-brand-300' : 'text-brand-700' }}">{{ $plan['for'] }}</p>
                         <h3 class="mt-2 font-display text-2xl font-bold">{{ $plan['name'] }}</h3>
-                        <p class="mt-6 font-display text-5xl font-extrabold tracking-tight">CI${{ $plan['price'] }}<span class="text-base font-medium {{ $key === 'small-business' ? 'text-white/60' : 'text-muted' }}">/yr</span></p>
+                        <p class="mt-6 font-display text-5xl font-bold tracking-tight">CI${{ $plan['price'] }}<span class="text-base font-medium {{ $key === 'small-business' ? 'text-white/60' : 'text-muted' }}">/yr</span></p>
                         <ul class="mt-6 space-y-3 text-sm {{ $key === 'small-business' ? 'text-white/85' : '' }}">
                             <li class="flex gap-3"><x-icon name="users" class="size-[18px] shrink-0 {{ $key === 'small-business' ? 'text-brand-400' : 'text-brand-600' }}" /> {{ $plan['recipients'] }} recipients included</li>
                             <li class="flex gap-3"><x-icon name="key-round" class="size-[18px] shrink-0 {{ $key === 'small-business' ? 'text-brand-400' : 'text-brand-600' }}" /> Mailbox key</li>
@@ -92,7 +92,7 @@
                 </ol>
                 <div class="mt-8 flex gap-3 rounded-2xl bg-white p-4 text-sm ring-1 ring-line">
                     <x-icon name="building-2" class="mt-0.5 size-5 shrink-0 text-brand-600" />
-                    <p><strong class="font-semibold">Business applicants:</strong> you are required to provide a copy of a valid Trade &amp; Business licence in order to open the mailbox in the business&rsquo; name.</p>
+                    <p><strong class="font-medium">Business applicants:</strong> you are required to provide a copy of a valid Trade &amp; Business licence in order to open the mailbox in the business&rsquo; name.</p>
                 </div>
             </div>
 
@@ -113,7 +113,7 @@
                                     <span>
                                         <strong class="font-display text-base font-bold">{{ $plan['name'] }}</strong>
                                         <span class="text-muted">{{ $plan['recipients'] }} recipients</span>
-                                        <span class="mt-2 font-semibold">CI${{ $plan['price'] }}/yr</span>
+                                        <span class="mt-2 font-medium">CI${{ $plan['price'] }}/yr</span>
                                     </span>
                                 </label>
                             @endforeach
@@ -144,7 +144,7 @@
                             @foreach (['Individual', 'Business'] as $type)
                                 <label class="cursor-pointer">
                                     <input type="radio" name="applicant_type" value="{{ $type }}" class="peer sr-only" x-model="applicant">
-                                    <span class="block rounded-full px-5 py-2 text-sm font-semibold text-muted transition peer-checked:bg-ink peer-checked:text-white">{{ $type }}</span>
+                                    <span class="block rounded-full px-5 py-2 text-sm font-medium text-muted transition peer-checked:bg-ink peer-checked:text-white">{{ $type }}</span>
                                 </label>
                             @endforeach
                         </div>
@@ -177,10 +177,10 @@
                     {{-- Live total --}}
                     <div class="mt-8 rounded-2xl bg-paper p-5 ring-1 ring-line">
                         <dl class="space-y-2 text-sm">
-                            <div class="flex justify-between"><dt class="text-muted">Annual subscription</dt><dd class="font-semibold tabular-nums" x-text="money(planPrice)"></dd></div>
-                            <div class="flex justify-between" x-show="extraCost > 0"><dt class="text-muted">Additional recipients</dt><dd class="font-semibold tabular-nums" x-text="money(extraCost)"></dd></div>
-                            <div class="flex justify-between"><dt class="text-muted">Refundable key deposit</dt><dd class="font-semibold tabular-nums">CI${{ number_format($mailbox['key_deposit'], 2) }}</dd></div>
-                            <div class="flex items-baseline justify-between border-t border-line pt-3"><dt class="font-semibold">Due on sign-up</dt><dd class="font-display text-2xl font-extrabold tabular-nums" x-text="money(total)"></dd></div>
+                            <div class="flex justify-between"><dt class="text-muted">Annual subscription</dt><dd class="font-medium tabular-nums" x-text="money(planPrice)"></dd></div>
+                            <div class="flex justify-between" x-show="extraCost > 0"><dt class="text-muted">Additional recipients</dt><dd class="font-medium tabular-nums" x-text="money(extraCost)"></dd></div>
+                            <div class="flex justify-between"><dt class="text-muted">Refundable key deposit</dt><dd class="font-medium tabular-nums">CI${{ number_format($mailbox['key_deposit'], 2) }}</dd></div>
+                            <div class="flex items-baseline justify-between border-t border-line pt-3"><dt class="font-medium">Due on sign-up</dt><dd class="font-display text-2xl font-bold tabular-nums" x-text="money(total)"></dd></div>
                         </dl>
                     </div>
 

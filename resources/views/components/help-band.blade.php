@@ -11,14 +11,14 @@
                     <span class="icon-tile"><x-icon name="phone" /></span>
                     <div>
                         <dt class="text-muted">Call both stores</dt>
-                        <dd><a class="text-base font-semibold" href="tel:{{ config('mbe.phone_href') }}">{{ config('mbe.phone') }}</a></dd>
+                        <dd><a class="text-base font-medium" href="tel:{{ config('mbe.phone_href') }}">{{ config('mbe.phone') }}</a></dd>
                     </div>
                 </div>
                 <div class="flex items-center gap-4">
                     <span class="icon-tile"><x-icon name="map-pin" /></span>
                     <div>
                         <dt class="text-muted">Visit us</dt>
-                        <dd class="font-semibold">Camana Bay &middot; Harbour Walk</dd>
+                        <dd class="font-medium">Camana Bay &middot; Harbour Walk</dd>
                     </div>
                 </div>
             </dl>

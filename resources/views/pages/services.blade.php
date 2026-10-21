@@ -58,7 +58,7 @@
                     <figure class="group relative overflow-hidden rounded-2xl {{ $loop->even ? 'translate-y-6' : '' }}">
                         <img src="{{ asset('images/'.$image) }}" alt="{{ $caption ?? 'Print and cherish precious memories' }}" class="aspect-square w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy">
                         @if ($caption)
-                            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 to-transparent p-4 pt-10 text-sm font-semibold text-white">{{ $caption }}</figcaption>
+                            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 to-transparent p-4 pt-10 text-sm font-medium text-white">{{ $caption }}</figcaption>
                         @endif
                     </figure>
                 @endforeach
@@ -72,7 +72,7 @@
         <div class="wrap relative grid items-center gap-12 lg:grid-cols-12">
             <div class="lg:col-span-7" data-reveal>
                 <p class="eyebrow !text-brand-300">Shredding</p>
-                <h2 class="mt-4 font-display text-5xl font-extrabold tracking-tight sm:text-6xl">Don&rsquo;t trash, <span class="text-brand-500">shred.</span></h2>
+                <h2 class="mt-4 font-display text-5xl font-bold tracking-tight sm:text-6xl">Don&rsquo;t trash, <span class="text-brand-500">shred.</span></h2>
                 <p class="mt-5 max-w-xl text-lg text-white/70">With identity theft on the rise, it&rsquo;s more important than ever to properly dispose of personal and sensitive documents. MBE Shredding offers a convenient solution for individuals and businesses.</p>
                 <ul class="mt-8 flex flex-wrap gap-2">
                     @foreach (['Old tax receipts', 'Bank statements', 'Medical records', 'Business archives'] as $tag)
@@ -101,7 +101,7 @@
         <div class="wrap grid items-center gap-12 lg:grid-cols-2">
             <div class="relative order-last lg:order-first" data-reveal>
                 <img src="{{ asset('images/photo-booth.jpg') }}" alt="Two friends pulling faces in a photo booth" class="aspect-square w-full rounded-3xl object-cover shadow-lift" loading="lazy">
-                <span class="absolute top-5 left-5 rounded-full bg-brand-600 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-white uppercase">New service</span>
+                <span class="absolute top-5 left-5 rounded-full bg-brand-600 px-3.5 py-1.5 text-xs font-medium tracking-wide text-white uppercase">New service</span>
             </div>
             <div data-reveal style="--reveal-delay: 120ms">
                 <p class="eyebrow">Photo Booth Rental</p>
@@ -117,7 +117,7 @@
                     ] as [$icon, $title, $text])
                         <li class="flex gap-4">
                             <span class="icon-tile !size-10 !rounded-xl"><x-icon :name="$icon" class="size-[18px]" /></span>
-                            <p class="pt-0.5 text-sm"><strong class="font-semibold">{{ $title }}.</strong> <span class="text-muted">{{ $text }}</span></p>
+                            <p class="pt-0.5 text-sm"><strong class="font-medium">{{ $title }}.</strong> <span class="text-muted">{{ $text }}</span></p>
                         </li>
                     @endforeach
                 </ul>

@@ -36,7 +36,7 @@
             <div class="relative" data-reveal style="--reveal-delay: 120ms">
                 <img src="{{ asset('images/work-from-home.jpg') }}" alt="A customer managing her mail from a laptop at home" class="aspect-square w-full rounded-3xl object-cover shadow-lift" loading="lazy">
                 <div class="absolute -bottom-6 -left-4 max-w-60 rounded-2xl bg-white p-4 shadow-lift ring-1 ring-line sm:-left-8">
-                    <p class="flex items-center gap-2 text-xs font-semibold text-emerald-700"><span class="size-2 rounded-full bg-emerald-500"></span> Courier delivery received</p>
+                    <p class="flex items-center gap-2 text-xs font-medium text-emerald-700"><span class="size-2 rounded-full bg-emerald-500"></span> Courier delivery received</p>
                     <p class="mt-1 text-sm text-muted">When UPS, FedEx and DHL come knocking, someone is always in the office at MBE.</p>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                     </ul>
                     <div class="mt-auto pt-8">
                         <p class="text-sm text-muted">Starting at</p>
-                        <p class="font-display text-4xl font-extrabold">CI${{ $plans['personal']['price'] }}<span class="text-base font-medium text-muted"> /year plus refundable security deposit</span></p>
+                        <p class="font-display text-4xl font-bold">CI${{ $plans['personal']['price'] }}<span class="text-base font-medium text-muted"> /year plus refundable security deposit</span></p>
                         <a href="{{ route('physical') }}#form-mailbox" class="btn btn-dark mt-6 w-full sm:w-auto">Physical Mailbox application <x-icon name="arrow-right" class="size-4" /></a>
                     </div>
                 </article>
@@ -103,7 +103,7 @@
                     </ul>
                     <div class="relative mt-auto pt-8">
                         <p class="text-sm text-white/60">Starting at</p>
-                        <p class="font-display text-4xl font-extrabold">CI${{ $mbe['mailbox']['virtual_month'] }}<span class="text-base font-medium text-white/60"> /month or CI${{ $mbe['mailbox']['virtual_year'] }}/year</span></p>
+                        <p class="font-display text-4xl font-bold">CI${{ $mbe['mailbox']['virtual_month'] }}<span class="text-base font-medium text-white/60"> /month or CI${{ $mbe['mailbox']['virtual_year'] }}/year</span></p>
                         <a href="{{ route('virtual') }}" class="btn btn-primary mt-6 w-full sm:w-auto">Virtual Mailbox application <x-icon name="arrow-right" class="size-4" /></a>
                     </div>
                 </article>

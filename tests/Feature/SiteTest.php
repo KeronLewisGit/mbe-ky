@@ -21,7 +21,7 @@ class SiteTest extends TestCase
     public static function publicPages(): array
     {
         return [
-            'home' => ['/', 'Shop the world.'],
+            'home' => ['/', 'Your local post, parcel and print centre.'],
             'mailboxes' => ['/mailboxes', 'On-Demand Address Service'],
             'virtual' => ['/virtual', 'Anytime Mailbox'],
             'physical' => ['/physical', 'Physical Mailbox application'],

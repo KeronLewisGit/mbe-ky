@@ -31,7 +31,7 @@
                     <div class="grid gap-1 py-3.5 sm:grid-cols-3">
                         <dt class="text-muted">Attachment</dt>
                         <dd class="sm:col-span-2">
-                            <a href="{{ route('admin.enquiry.attachment', $enquiry) }}" class="inline-flex items-center gap-2 rounded-full bg-paper px-3.5 py-1.5 font-semibold ring-1 ring-line transition hover:ring-ink/40">
+                            <a href="{{ route('admin.enquiry.attachment', $enquiry) }}" class="inline-flex items-center gap-2 rounded-full bg-paper px-3.5 py-1.5 font-medium ring-1 ring-line transition hover:ring-ink/40">
                                 <x-icon name="paperclip" class="size-4" /> {{ $enquiry->attachment_name }}
                             </a>
                         </dd>
@@ -43,7 +43,7 @@
         <div class="space-y-6">
             <section class="card !p-6">
                 <h2 class="font-display text-lg font-bold">Customer</h2>
-                <p class="mt-3 font-semibold">{{ $enquiry->name }}</p>
+                <p class="mt-3 font-medium">{{ $enquiry->name }}</p>
                 <div class="mt-3 space-y-2 text-sm">
                     <a href="mailto:{{ $enquiry->email }}?subject={{ rawurlencode('Re: your '.Str::lower($enquiry->typeLabel()).' ('.$enquiry->reference.')') }}" class="flex items-center gap-2.5 hover:text-brand-700"><x-icon name="mail" class="size-4 text-muted" /> {{ $enquiry->email }}</a>
                     @if ($enquiry->phone)

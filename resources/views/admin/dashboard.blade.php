@@ -14,7 +14,7 @@
                     <dt class="text-sm font-medium text-muted">{{ $label }}</dt>
                     <x-icon :name="$icon" class="size-5 {{ $colour }}" />
                 </div>
-                <dd class="mt-2 font-display text-4xl font-extrabold">{{ $value }}</dd>
+                <dd class="mt-2 font-display text-4xl font-bold">{{ $value }}</dd>
                 <p class="mt-1 text-xs text-muted">{{ $hint }}</p>
             </div>
         @endforeach
@@ -32,7 +32,7 @@
                         <a href="{{ route('admin.enquiry', $enquiry) }}" class="flex items-center gap-4 px-6 py-4 transition hover:bg-paper">
                             <span class="icon-tile !size-10 !rounded-xl"><x-icon :name="$enquiry->typeIcon()" class="size-[18px]" /></span>
                             <div class="min-w-0 flex-1">
-                                <p class="truncate text-sm font-semibold">{{ $enquiry->name }} <span class="font-normal text-muted">&middot; {{ $enquiry->summary }}</span></p>
+                                <p class="truncate text-sm font-medium">{{ $enquiry->name }} <span class="font-normal text-muted">&middot; {{ $enquiry->summary }}</span></p>
                                 <p class="text-xs text-muted">{{ $enquiry->typeLabel() }} &middot; {{ $enquiry->created_at->diffForHumans() }}</p>
                             </div>
                             <x-status-badge :enquiry="$enquiry" />
@@ -54,9 +54,9 @@
                                 <x-icon :name="$row['meta']['icon']" class="size-[18px] text-muted" />
                                 <span class="flex-1">{{ $row['meta']['label'] }}</span>
                                 @if ($row['new'])
-                                    <span class="rounded-full bg-brand-50 px-2 py-0.5 text-xs font-semibold text-brand-700">{{ $row['new'] }} new</span>
+                                    <span class="rounded-full bg-brand-50 px-2 py-0.5 text-xs font-medium text-brand-700">{{ $row['new'] }} new</span>
                                 @endif
-                                <span class="w-6 text-right font-semibold tabular-nums">{{ $row['total'] }}</span>
+                                <span class="w-6 text-right font-medium tabular-nums">{{ $row['total'] }}</span>
                             </a>
                         </li>
                     @endforeach
