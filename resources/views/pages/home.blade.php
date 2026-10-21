@@ -64,7 +64,7 @@
                     @endforeach
                 </ul>
             </div>
-            <div class="relative order-first -mt-16 lg:order-none lg:col-span-6 lg:-mt-0 lg:-translate-y-16 lg:self-start" data-reveal style="--reveal-delay: 120ms">
+            <div class="relative order-first -mt-16 lg:order-none lg:col-span-6 lg:-mt-0" data-reveal style="--reveal-delay: 120ms">
                 <div class="card relative !p-0 text-ink shadow-lift" x-data="eboxCalculator(@js($mbe['ebox']))">
                     <div class="airmail h-1.5"></div>
                     <div class="p-6 sm:p-7">
