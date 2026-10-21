@@ -8,7 +8,9 @@ use App\Models\User;
 use Database\Seeders\DatabaseSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Session\TokenMismatchException;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
@@ -108,5 +110,17 @@ class BackendHardeningTest extends TestCase
         $this->get('/search?q=')->assertOk();
         $this->get('/search?q=a')->assertOk();
         $this->get('/search?q=ocean+ship')->assertOk()->assertSee('Ocean Ship');
+    }
+
+    public function test_an_expired_session_returns_to_the_form_with_the_input_kept(): void
+    {
+        Route::middleware('web')->post('/_expired', fn () => throw new TokenMismatchException);
+
+        $this->from('/contact-us')
+            ->post('/_expired', ['name' => 'Kept Name', 'message' => 'Still here', 'attachment' => 'x', '_token' => 'old'])
+            ->assertRedirect('/contact-us')
+            ->assertSessionHas('session_expired')
+            ->assertSessionHasInput('name', 'Kept Name')
+            ->assertSessionMissing('_old_input._token');
     }
 }

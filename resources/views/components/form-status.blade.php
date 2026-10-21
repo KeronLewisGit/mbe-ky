@@ -15,6 +15,11 @@
             </p>
         </div>
     </div>
+@elseif (session('session_expired') && ! $errors->getBag($type)->any())
+    <div class="mb-6 flex gap-3 rounded-2xl bg-brand-50 p-4 text-sm text-brand-900 ring-1 ring-brand-200" role="alert">
+        <x-icon name="triangle-alert" class="mt-0.5 size-5 shrink-0 text-brand-600" />
+        <p><strong class="font-medium">Your session timed out.</strong> We kept what you typed. Please check it and submit again.</p>
+    </div>
 @elseif ($errors->getBag($type)->any())
     <div class="mb-6 flex gap-3 rounded-2xl bg-brand-50 p-4 text-sm text-brand-900 ring-1 ring-brand-200" role="alert">
         <x-icon name="triangle-alert" class="mt-0.5 size-5 shrink-0 text-brand-600" />
