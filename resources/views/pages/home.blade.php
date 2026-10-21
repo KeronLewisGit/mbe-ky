@@ -238,8 +238,8 @@
                     'new' => [
                         'title' => 'Just landed? Here are the essentials.',
                         'text' => 'Moving somewhere new comes with a long to-do list. Get your address, your online shopping and your paperwork sorted in one visit.',
-                        'image' => 'work-from-home.jpg',
-                        'alt' => 'A new resident setting up her mail online',
+                        'image' => 'new-resident.jpg',
+                        'alt' => 'A new resident smiling at her laptop among moving boxes',
                         'items' => [
                             ['mailbox', 'A Cayman mailing address', 'A street address that accepts post and FedEx, DHL and UPS deliveries.', 'mailboxes'],
                             ['plane', 'A U.S. address for shopping', 'Keep ordering from your favourite U.S. stores with E-box.', 'ebox'],
@@ -250,8 +250,8 @@
                     'shopper' => [
                         'title' => 'Add to cart. We handle the rest.',
                         'text' => 'Use your E-box address at checkout. We receive your order in Miami, fly it to Cayman, clear Customs and let you know when it is ready.',
-                        'image' => 'virtual-mailbox.jpg',
-                        'alt' => 'A phone showing a new mail notification',
+                        'image' => 'online-shopper.jpg',
+                        'alt' => 'A happy customer at home holding her E-box parcel',
                         'items' => [
                             ['badge-percent', '0% Florida sales tax', 'Amazon and eBay orders sent to your E-box address are not subject to Florida sales tax.', 'ebox'],
                             ['shield-check', 'We clear Customs for you', 'Upload your invoice in the app and skip the queue.', 'ebox'],
@@ -262,8 +262,8 @@
                     'business' => [
                         'title' => 'Let MBE be your solutions partner.',
                         'text' => 'Services tailored for small businesses: a professional address, mail you can manage remotely, print that makes an impression and courier you can count on.',
-                        'image' => 'print-centre.jpg',
-                        'alt' => 'The MBE print centre',
+                        'image' => 'business-owner.jpg',
+                        'alt' => 'A small business owner opening her shop for the day',
                         'items' => [
                             ['building-2', 'A business street address', 'Small Business and Corporate mailboxes for up to four recipients.', 'physical'],
                             ['smartphone', 'Mail you can read anywhere', 'Scan, forward or shred from the Virtual Mailbox app.', 'virtual'],
@@ -277,8 +277,8 @@
             @foreach ($audiences as $key => $audience)
                 <div x-show="tab === '{{ $key }}'" @if (! $loop->first) x-cloak @endif x-transition.opacity.duration.300ms class="mt-10 grid items-stretch gap-6 lg:grid-cols-12" role="tabpanel">
                     <div class="relative overflow-hidden rounded-3xl bg-ink lg:col-span-5">
-                        <img src="{{ asset('images/'.$audience['image']) }}" alt="{{ $audience['alt'] }}" class="absolute inset-0 size-full object-cover opacity-60" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/10"></div>
+                        <img src="{{ asset('images/'.$audience['image']) }}" alt="{{ $audience['alt'] }}" class="absolute inset-0 size-full object-cover object-top" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-transparent"></div>
                         <div class="relative flex h-full min-h-80 flex-col justify-end p-8 text-white">
                             <h3 class="font-display text-3xl font-bold">{{ $audience['title'] }}</h3>
                             <p class="mt-3 text-white/75">{{ $audience['text'] }}</p>
@@ -416,15 +416,15 @@
             </div>
             <div class="mt-12 grid gap-6 md:grid-cols-3">
                 @foreach ([
-                    ['Tamara Ebanks', 'West Bay · E-box customer', 'I order everything for the kids from the States now. The app tells me the minute it lands in Miami, and the Camana Bay team has it ready for me on my way home from work. No stress, no surprises at Customs.', 'TE'],
-                    ['Dwayne Bodden', 'Savannah · Ocean Ship customer', 'We furnished our whole new place in Savannah through Ocean Ship. One flat rate for the container space, they cleared it all, and it arrived on the sailing date they gave us. Couldn\'t ask for better.', 'DB'],
-                    ['Priya & Marcus Scott', 'George Town · Small business mailbox', 'Our little company needed a proper street address and someone to sign for deliveries. The Harbour Walk crew know us by name, print our flyers and even remind us when a package is waiting.', 'PS'],
-                ] as $i => [$name, $meta, $quote, $initials])
+                    ['Tamara Ebanks', 'West Bay · E-box customer', 'I order everything for the kids from the States now. The app tells me the minute it lands in Miami, and the Camana Bay team has it ready for me on my way home from work. No stress, no surprises at Customs.', 'customer-tamara.jpg'],
+                    ['Dwayne Bodden', 'Savannah · Ocean Ship customer', 'We furnished our whole new place in Savannah through Ocean Ship. One flat rate for the container space, they cleared it all, and it arrived on the sailing date they gave us. Couldn\'t ask for better.', 'customer-dwayne.jpg'],
+                    ['Keisha & Marcus Scott', 'George Town · Small business mailbox', 'Our little company needed a proper street address and someone to sign for deliveries. The Harbour Walk crew know us by name, print our flyers and even remind us when a package is waiting.', 'customer-scotts.jpg'],
+                ] as $i => [$name, $meta, $quote, $photo])
                     <figure class="card flex flex-col" data-reveal style="--reveal-delay: {{ $i * 80 }}ms">
                         <x-icon name="quote" class="size-8 text-brand-600" />
                         <blockquote class="mt-4 flex-1 text-[15px] leading-relaxed text-ink/85">{{ $quote }}</blockquote>
                         <figcaption class="mt-6 flex items-center gap-3 border-t border-line pt-5">
-                            <span class="grid size-11 shrink-0 place-items-center rounded-full bg-brand-600 font-display text-sm font-medium text-white">{{ $initials }}</span>
+                            <img src="{{ asset('images/'.$photo) }}" alt="" class="size-12 shrink-0 rounded-full object-cover ring-2 ring-brand-600/20" loading="lazy">
                             <span>
                                 <span class="block font-display font-medium">{{ $name }}</span>
                                 <span class="block text-xs text-muted">{{ $meta }}</span>

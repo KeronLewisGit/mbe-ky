@@ -34,7 +34,7 @@
                 </ul>
             </div>
             <div class="relative" data-reveal style="--reveal-delay: 120ms">
-                <img src="{{ asset('images/work-from-home.jpg') }}" alt="A customer managing her mail from a laptop at home" class="aspect-square w-full rounded-3xl object-cover shadow-lift" loading="lazy">
+                <img src="{{ asset('images/new-resident.jpg') }}" alt="A customer managing her mail from a laptop at home" class="aspect-square w-full rounded-3xl object-cover shadow-lift" loading="lazy">
                 <div class="absolute -bottom-6 -left-4 max-w-60 rounded-2xl bg-white p-4 shadow-lift ring-1 ring-line sm:-left-8">
                     <p class="flex items-center gap-2 text-xs font-medium text-emerald-700"><span class="size-2 rounded-full bg-emerald-500"></span> Courier delivery received</p>
                     <p class="mt-1 text-sm text-muted">When UPS, FedEx and DHL come knocking, someone is always in the office at MBE.</p>
