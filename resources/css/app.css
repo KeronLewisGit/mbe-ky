@@ -41,21 +41,12 @@
     --shadow-lift: 0 2px 4px rgb(28 24 25 / 0.04), 0 24px 48px -20px rgb(28 24 25 / 0.28);
 
     --animate-marquee: marquee 38s linear infinite;
-    --animate-float: float 7s ease-in-out infinite;
 
     @keyframes marquee {
         to {
             transform: translateX(-50%);
         }
     }
-    @keyframes float {
-        0%,
-        100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-8px);
-        }
     }
 }
 
@@ -287,8 +278,7 @@
         transform: none;
         transition: none;
     }
-    .animate-marquee,
-    .animate-float {
+    .animate-marquee {
         animation: none;
     }
 }

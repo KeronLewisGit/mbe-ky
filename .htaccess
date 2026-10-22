@@ -23,3 +23,7 @@ DirectorySlash Off
 <FilesMatch "^\.env|\.(sqlite|sqlite-journal|log)$">
     Require all denied
 </FilesMatch>
+
+<IfModule mod_headers.c>
+    Header unset X-Powered-By
+</IfModule>

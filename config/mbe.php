@@ -88,7 +88,6 @@ return [
         'dim_divisor' => 166,
         'transit' => '5–7 business days',
         'address' => ['First & Last Name', '2250 NW 114th Ave', 'Unit 1Y CBY XXXX', 'Doral, FL 33192-4177'],
-        'po_box' => ['First & Last Name CBY XXXX', 'PO BOX 029011', 'Miami, FL 33102-9011'],
         'points' => [
             ['Ship a package', 7],
             ['Pre-alert a package', 5],

@@ -49,6 +49,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title ? $title.' · ' : '' }}Mail Boxes Etc. Cayman Islands</title>
     <meta name="description" content="{{ $description ?? 'Mailboxes, a U.S. address for online shopping, worldwide shipping and printing in Grand Cayman. Visit Mail Boxes Etc. at Camana Bay and Harbour Walk.' }}">
+    <link rel="canonical" href="{{ url()->current() }}">
+    @unless (app()->isProduction())
+        {{-- Demo and staging copies must not be indexed; the live site is. --}}
+        <meta name="robots" content="noindex, nofollow">
+    @endunless
     <meta name="theme-color" content="#141517">
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
     @fonts

@@ -164,4 +164,22 @@ class BackendHardeningTest extends TestCase
 
         $this->assertStringContainsString('too large', session('errors')->getBag('ocean-pre-alert')->first('attachment'));
     }
+
+    public function test_every_response_carries_browser_hardening_headers(): void
+    {
+        $this->get('/')
+            ->assertHeader('X-Content-Type-Options', 'nosniff')
+            ->assertHeader('X-Frame-Options', 'SAMEORIGIN')
+            ->assertHeader('Referrer-Policy', 'strict-origin-when-cross-origin')
+            ->assertHeaderMissing('Strict-Transport-Security');
+
+        $this->get('https://localhost/')->assertHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+    }
+
+    public function test_non_production_copies_are_hidden_from_search_engines(): void
+    {
+        $this->get('/')
+            ->assertSee('name="robots" content="noindex, nofollow"', false)
+            ->assertSee('rel="canonical" href="'.url('/').'"', false);
+    }
 }
