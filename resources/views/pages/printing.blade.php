@@ -22,7 +22,7 @@
 <x-layout title="Printing Services" description="Digital printing, binding, laminating and finishing in Grand Cayman. Request a print quote online from Mail Boxes Etc.">
     <x-page-hero eyebrow="Printing services" title="Print that leaves a lasting impression."
         lead="From business cards and brochures to postcards and presentation booklets, what you leave with your prospect or customer leaves a lasting impression. Trust Mail Boxes Etc. to deliver quality printing with a fast turnaround."
-        image="print-centre.jpg" image-alt="A smiling print specialist at work in the print centre">
+        image="print-centre.jpg" image-alt="Smiling MBE print specialists with finished booklets beside the digital press">
         <a href="#form-print-quote" class="btn btn-primary">Get a quote</a>
         <span class="text-sm text-white/70">Colour printing from <strong class="text-white">CI${{ number_format($mbe['print_from'], 2) }}</strong> per page</span>
     </x-page-hero>
