@@ -296,7 +296,7 @@
             init() { try { this.show = ! localStorage.getItem('mbe-cookies') } catch (e) { this.show = true } },
             accept() { this.show = false; try { localStorage.setItem('mbe-cookies', '1') } catch (e) {} },
         }"
-        class="fixed inset-x-4 bottom-4 z-40 mx-auto flex max-w-3xl flex-col gap-4 rounded-sm bg-white p-5 shadow-lift ring-1 ring-line sm:flex-row sm:items-center">
+        class="fixed inset-x-3 bottom-3 z-40 mx-auto flex max-w-3xl flex-col gap-3 rounded-sm bg-white p-4 shadow-lift ring-1 ring-line sm:inset-x-4 sm:bottom-4 sm:flex-row sm:items-center sm:gap-4 sm:p-5">
         <p class="text-sm text-muted">We use cookies to provide a more efficient and personalised service. By clicking “I accept” you agree to our use of cookies and <a href="{{ route('legal', 'virtual-mailbox-privacy') }}" class="link">privacy policy</a>.</p>
         <button type="button" class="btn btn-dark shrink-0" @click="accept()">I accept</button>
     </div>

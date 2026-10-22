@@ -97,7 +97,7 @@
                                 <div class="rounded-2xl p-4 {{ $key === 'pro' ? 'bg-brand-600 text-white' : 'bg-paper ring-1 ring-line' }}">
                                     <p class="text-xs font-medium {{ $key === 'pro' ? 'text-white/75' : 'text-muted' }}">{{ $plan['name'] }}</p>
                                     <p class="mt-1 font-display text-2xl font-medium tabular-nums" x-text="chargeable ? money(cost('{{ $key }}')) : 'CI$ –'">CI$ –</p>
-                                    <p class="mt-1 text-[11px] {{ $key === 'pro' ? 'text-white/75' : 'text-muted' }}">{{ $plan['membership'] ? 'CI$'.$plan['membership'].'/yr membership' : 'No membership fee' }}</p>
+                                    <p class="mt-1 text-xs {{ $key === 'pro' ? 'text-white/75' : 'text-muted' }}">{{ $plan['membership'] ? 'CI$'.$plan['membership'].'/yr membership' : 'No membership fee' }}</p>
                                 </div>
                             @endforeach
                         </div>

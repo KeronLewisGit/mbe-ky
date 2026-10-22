@@ -58,6 +58,7 @@
                         </tbody>
                     </table>
                 </div>
+                <p class="mt-2 text-xs text-muted sm:hidden" aria-hidden="true">Swipe sideways to see every column &rarr;</p>
                 <div class="mt-4 space-y-1.5 text-xs text-muted">
                     <p>Future sailing dates will be posted as they become available. Holidays may affect sailing dates and cut-offs.</p>
                     <p>*Only packages that have been pre-alerted with the correct invoice are permitted to be released for shipping.</p>
@@ -101,7 +102,7 @@
                             <h3 class="font-display text-2xl font-bold">Ocean freight estimator</h3>
                             <p class="mt-1 text-sm text-muted">Cubic feet = L × W × H ÷ {{ $ocean['divisor'] }}, measured in inches.</p>
                         </div>
-                        <span class="icon-tile !bg-white"><x-icon name="calculator" /></span>
+                        <span class="icon-tile !bg-white !text-brand-600"><x-icon name="calculator" /></span>
                     </div>
 
                     <div class="mt-6 space-y-3">

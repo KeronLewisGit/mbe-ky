@@ -53,7 +53,7 @@
                     <li class="card flex gap-5 !p-5 sm:!p-6" data-reveal style="--reveal-delay: {{ $i * 60 }}ms">
                         <span class="icon-tile relative">
                             <x-icon :name="$step[0]" />
-                            <span class="absolute -top-2 -right-2 grid size-6 place-items-center rounded-full bg-ink text-[11px] font-bold text-white">{{ $i + 1 }}</span>
+                            <span class="absolute -top-2 -right-2 grid size-6 place-items-center rounded-full bg-ink text-xs font-bold text-white">{{ $i + 1 }}</span>
                         </span>
                         <div>
                             <h3 class="font-display text-lg font-bold">{{ $step[1] }}</h3>
@@ -218,6 +218,7 @@
                         </tbody>
                     </table>
                 </div>
+                <p class="mt-2 text-xs text-muted sm:hidden" aria-hidden="true">Swipe sideways to see every column &rarr;</p>
                 <div class="mt-6 flex gap-3 rounded-2xl bg-brand-50 p-5 text-sm text-brand-900 ring-1 ring-brand-100">
                     <x-icon name="info" class="mt-0.5 size-5 shrink-0 text-brand-600" />
                     <p><strong class="font-medium">Important.</strong> All rates in C.I. dollars. Imported goods are subject to duties and tax assessed by Customs and Border Control in accordance with the Cayman Islands Customs Law. The shipping rates are applied to the greater of actual weight and dimensional weight. See the FAQ for more information.</p>

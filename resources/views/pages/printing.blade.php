@@ -87,9 +87,9 @@
                     <ol class="mb-8 grid grid-cols-4 gap-2">
                         @foreach ($steps as $index => $label)
                             <li>
-                                <button type="button" class="block w-full text-left" @click="if ({{ $index }} < step) go({{ $index }})" :aria-current="step === {{ $index }} ? 'step' : null">
+                                <button type="button" class="block min-h-11 w-full py-1 text-left" @click="if ({{ $index }} < step) go({{ $index }})" :aria-current="step === {{ $index }} ? 'step' : null" aria-label="Step {{ $index + 1 }}: {{ $label }}">
                                     <span class="block h-1.5 rounded-full transition" :class="step >= {{ $index }} ? 'bg-brand-600' : 'bg-line'"></span>
-                                    <span class="mt-2 hidden text-xs font-medium sm:block" :class="step >= {{ $index }} ? 'text-ink' : 'text-muted'">{{ $index + 1 }}. {{ $label }}</span>
+                                    <span class="mt-2 block text-xs font-medium" :class="step >= {{ $index }} ? 'text-ink' : 'text-muted'">{{ $index + 1 }}<span class="hidden sm:inline">. {{ $label }}</span></span>
                                 </button>
                             </li>
                         @endforeach

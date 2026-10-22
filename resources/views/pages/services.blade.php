@@ -10,8 +10,8 @@
     {{-- Passport photos --}}
     <section class="section scroll-mt-20" id="passport-photos">
         <div class="wrap">
-            <div class="grid items-center gap-10 rounded-[2rem] bg-white p-6 shadow-card ring-1 ring-line/70 sm:p-12 lg:grid-cols-12" data-reveal>
-                <div class="lg:col-span-7">
+            <div class="grid grid-cols-1 items-center gap-10 rounded-[2rem] bg-white p-6 shadow-card ring-1 ring-line/70 sm:p-12 lg:grid-cols-12" data-reveal>
+                <div class="min-w-0 lg:col-span-7">
                     <p class="eyebrow">Passport &amp; visa photos</p>
                     <h2 class="h-section mt-4">Photos done right, the first time.</h2>
                     <p class="lead mt-4">Travelling, renewing or applying? Have your passport and visa photos taken in store. We take newborn passport photos too.</p>
@@ -26,7 +26,7 @@
                     <div class="mx-auto flex max-w-xs justify-center gap-4">
                         @foreach (['rotate-[-6deg]', 'rotate-[4deg] translate-y-6'] as $tilt)
                             <div class="{{ $tilt }} rounded-xl bg-white p-3 pb-8 shadow-lift ring-1 ring-line">
-                                <div class="grid aspect-[7/9] w-28 place-items-center rounded-md bg-paper-deep">
+                                <div class="grid aspect-[7/9] w-20 place-items-center rounded-md bg-paper-deep sm:w-28">
                                     <x-icon name="user-round" class="size-14 text-ink/25" />
                                 </div>
                             </div>
