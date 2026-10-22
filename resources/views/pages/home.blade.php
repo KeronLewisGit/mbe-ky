@@ -309,7 +309,7 @@
     {{-- How E-box works + stats --}}
     <section class="section">
         <div class="wrap">
-            <div class="grid gap-12 lg:grid-cols-12">
+            <div class="grid items-center gap-12 lg:grid-cols-12">
                 <div class="lg:col-span-4" data-reveal>
                     <p class="eyebrow">How E-box works</p>
                     <h2 class="h-section mt-4">From checkout to Cayman in four steps.</h2>

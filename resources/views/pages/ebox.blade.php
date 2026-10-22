@@ -32,7 +32,7 @@
 
     {{-- How it works --}}
     <section class="section">
-        <div class="wrap grid grid-cols-1 gap-12 lg:grid-cols-12">
+        <div class="wrap grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
             <div class="lg:col-span-4" data-reveal>
                 <p class="eyebrow">How does E-box work?</p>
                 <h2 class="h-section mt-4">Five steps from cart to collection.</h2>
@@ -68,7 +68,7 @@
     {{-- Calculator --}}
     <section class="section relative overflow-hidden bg-ink text-white" id="calculator">
         <div class="grid-ink absolute inset-0 opacity-60"></div>
-        <div class="wrap relative grid items-start gap-12 lg:grid-cols-12" x-data="eboxCalculator(@js($ebox))">
+        <div class="wrap relative grid items-center gap-12 lg:grid-cols-12" x-data="eboxCalculator(@js($ebox))">
             <div class="lg:col-span-5" data-reveal>
                 <p class="eyebrow !text-brand-300">Shipping estimator</p>
                 <h2 class="h-section mt-4">Know the cost before you check out.</h2>

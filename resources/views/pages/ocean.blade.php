@@ -15,7 +15,7 @@
 
     {{-- Sailings --}}
     <section class="section" id="sailings">
-        <div class="wrap grid grid-cols-1 gap-12 lg:grid-cols-12">
+        <div class="wrap grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
             <div class="lg:col-span-4" data-reveal>
                 <p class="eyebrow">Upcoming sailing dates</p>
                 <h2 class="h-section mt-4">Bi-weekly sailings from Miami.</h2>
@@ -69,7 +69,7 @@
 
     {{-- Rates + calculator --}}
     <section class="section bg-white" id="calculator">
-        <div class="wrap grid grid-cols-1 gap-12 lg:grid-cols-12">
+        <div class="wrap grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
             <div class="lg:col-span-5" data-reveal>
                 <p class="eyebrow">Ocean cargo shipping rates</p>
                 <h2 class="h-section mt-4">Priced by the cubic foot.</h2>
